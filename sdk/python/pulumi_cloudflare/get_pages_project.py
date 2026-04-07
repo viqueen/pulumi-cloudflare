@@ -22,6 +22,8 @@ __all__ = [
     'get_pages_project_output',
 ]
 
+warnings.warn("""cloudflare.index/getpagesproject.getPagesProject has been deprecated in favor of cloudflare.pages/getproject.getProject""", DeprecationWarning)
+
 @pulumi.output_type
 class GetPagesProjectResult:
     """
@@ -264,7 +266,7 @@ def get_pages_project(account_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_cloudflare as cloudflare
 
-    example_pages_project = cloudflare.get_pages_project(account_id="023e105f4ecef8ad9ca31a8372d0c353",
+    example_pages_project = cloudflare.pages.get_project(account_id="023e105f4ecef8ad9ca31a8372d0c353",
         project_name="this-is-my-project-01")
     ```
 
@@ -272,6 +274,7 @@ def get_pages_project(account_id: Optional[_builtins.str] = None,
     :param _builtins.str account_id: Identifier.
     :param _builtins.str project_name: Name of the project.
     """
+    pulumi.log.warn("""get_pages_project is deprecated: cloudflare.index/getpagesproject.getPagesProject has been deprecated in favor of cloudflare.pages/getproject.getProject""")
     __args__ = dict()
     __args__['accountId'] = account_id
     __args__['projectName'] = project_name
@@ -307,7 +310,7 @@ def get_pages_project_output(account_id: Optional[pulumi.Input[_builtins.str]] =
     import pulumi
     import pulumi_cloudflare as cloudflare
 
-    example_pages_project = cloudflare.get_pages_project(account_id="023e105f4ecef8ad9ca31a8372d0c353",
+    example_pages_project = cloudflare.pages.get_project(account_id="023e105f4ecef8ad9ca31a8372d0c353",
         project_name="this-is-my-project-01")
     ```
 
@@ -315,6 +318,7 @@ def get_pages_project_output(account_id: Optional[pulumi.Input[_builtins.str]] =
     :param _builtins.str account_id: Identifier.
     :param _builtins.str project_name: Name of the project.
     """
+    pulumi.log.warn("""get_pages_project is deprecated: cloudflare.index/getpagesproject.getPagesProject has been deprecated in favor of cloudflare.pages/getproject.getProject""")
     __args__ = dict()
     __args__['accountId'] = account_id
     __args__['projectName'] = project_name

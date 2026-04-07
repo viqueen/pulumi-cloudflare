@@ -23,7 +23,7 @@ namespace Pulumi.Cloudflare
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var examplePagesDomain = new Cloudflare.PagesDomain("example_pages_domain", new()
+    ///     var examplePagesDomain = new Cloudflare.Pages.Domain("example_pages_domain", new()
     ///     {
     ///         AccountId = "023e105f4ecef8ad9ca31a8372d0c353",
     ///         ProjectName = "this-is-my-project-01",
@@ -39,6 +39,7 @@ namespace Pulumi.Cloudflare
     /// $ pulumi import cloudflare:index/pagesDomain:PagesDomain example '&lt;account_id&gt;/&lt;project_name&gt;/&lt;domain_name&gt;'
     /// ```
     /// </summary>
+    [Obsolete(@"cloudflare.index/pagesdomain.PagesDomain has been deprecated in favor of cloudflare.pages/domain.Domain")]
     [CloudflareResourceType("cloudflare:index/pagesDomain:PagesDomain")]
     public partial class PagesDomain : global::Pulumi.CustomResource
     {

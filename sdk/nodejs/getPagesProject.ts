@@ -13,13 +13,15 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as cloudflare from "@pulumi/cloudflare";
  *
- * const examplePagesProject = cloudflare.getPagesProject({
+ * const examplePagesProject = cloudflare.pages.getProject({
  *     accountId: "023e105f4ecef8ad9ca31a8372d0c353",
  *     projectName: "this-is-my-project-01",
  * });
  * ```
  */
+/** @deprecated cloudflare.index/getpagesproject.getPagesProject has been deprecated in favor of cloudflare.pages/getproject.getProject */
 export function getPagesProject(args: GetPagesProjectArgs, opts?: pulumi.InvokeOptions): Promise<GetPagesProjectResult> {
+    pulumi.log.warn("getPagesProject is deprecated: cloudflare.index/getpagesproject.getPagesProject has been deprecated in favor of cloudflare.pages/getproject.getProject")
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("cloudflare:index/getPagesProject:getPagesProject", {
         "accountId": args.accountId,
@@ -125,13 +127,15 @@ export interface GetPagesProjectResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as cloudflare from "@pulumi/cloudflare";
  *
- * const examplePagesProject = cloudflare.getPagesProject({
+ * const examplePagesProject = cloudflare.pages.getProject({
  *     accountId: "023e105f4ecef8ad9ca31a8372d0c353",
  *     projectName: "this-is-my-project-01",
  * });
  * ```
  */
+/** @deprecated cloudflare.index/getpagesproject.getPagesProject has been deprecated in favor of cloudflare.pages/getproject.getProject */
 export function getPagesProjectOutput(args: GetPagesProjectOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetPagesProjectResult> {
+    pulumi.log.warn("getPagesProject is deprecated: cloudflare.index/getpagesproject.getPagesProject has been deprecated in favor of cloudflare.pages/getproject.getProject")
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("cloudflare:index/getPagesProject:getPagesProject", {
         "accountId": args.accountId,

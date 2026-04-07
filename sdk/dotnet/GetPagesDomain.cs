@@ -9,6 +9,7 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Cloudflare
 {
+    [Obsolete(@"cloudflare.index/getpagesdomain.getPagesDomain has been deprecated in favor of cloudflare.pages/getdomain.getDomain")]
     public static class GetPagesDomain
     {
         /// <summary>
@@ -22,7 +23,7 @@ namespace Pulumi.Cloudflare
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var examplePagesDomain = Cloudflare.GetPagesDomain.Invoke(new()
+        ///     var examplePagesDomain = Cloudflare.Pages.GetDomain.Invoke(new()
         ///     {
         ///         AccountId = "023e105f4ecef8ad9ca31a8372d0c353",
         ///         ProjectName = "this-is-my-project-01",
@@ -46,7 +47,7 @@ namespace Pulumi.Cloudflare
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var examplePagesDomain = Cloudflare.GetPagesDomain.Invoke(new()
+        ///     var examplePagesDomain = Cloudflare.Pages.GetDomain.Invoke(new()
         ///     {
         ///         AccountId = "023e105f4ecef8ad9ca31a8372d0c353",
         ///         ProjectName = "this-is-my-project-01",
@@ -70,7 +71,7 @@ namespace Pulumi.Cloudflare
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var examplePagesDomain = Cloudflare.GetPagesDomain.Invoke(new()
+        ///     var examplePagesDomain = Cloudflare.Pages.GetDomain.Invoke(new()
         ///     {
         ///         AccountId = "023e105f4ecef8ad9ca31a8372d0c353",
         ///         ProjectName = "this-is-my-project-01",

@@ -9,6 +9,7 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Cloudflare
 {
+    [Obsolete(@"cloudflare.index/getpagesproject.getPagesProject has been deprecated in favor of cloudflare.pages/getproject.getProject")]
     public static class GetPagesProject
     {
         /// <summary>
@@ -22,7 +23,7 @@ namespace Pulumi.Cloudflare
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var examplePagesProject = Cloudflare.GetPagesProject.Invoke(new()
+        ///     var examplePagesProject = Cloudflare.Pages.GetProject.Invoke(new()
         ///     {
         ///         AccountId = "023e105f4ecef8ad9ca31a8372d0c353",
         ///         ProjectName = "this-is-my-project-01",
@@ -45,7 +46,7 @@ namespace Pulumi.Cloudflare
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var examplePagesProject = Cloudflare.GetPagesProject.Invoke(new()
+        ///     var examplePagesProject = Cloudflare.Pages.GetProject.Invoke(new()
         ///     {
         ///         AccountId = "023e105f4ecef8ad9ca31a8372d0c353",
         ///         ProjectName = "this-is-my-project-01",
@@ -68,7 +69,7 @@ namespace Pulumi.Cloudflare
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var examplePagesProject = Cloudflare.GetPagesProject.Invoke(new()
+        ///     var examplePagesProject = Cloudflare.Pages.GetProject.Invoke(new()
         ///     {
         ///         AccountId = "023e105f4ecef8ad9ca31a8372d0c353",
         ///         ProjectName = "this-is-my-project-01",

@@ -221,8 +221,13 @@ class _PagesDomainState:
         pulumi.set(self, "zone_tag", value)
 
 
+warnings.warn("""cloudflare.index/pagesdomain.PagesDomain has been deprecated in favor of cloudflare.pages/domain.Domain""", DeprecationWarning)
+
+
 @pulumi.type_token("cloudflare:index/pagesDomain:PagesDomain")
 class PagesDomain(pulumi.CustomResource):
+    warnings.warn("""cloudflare.index/pagesdomain.PagesDomain has been deprecated in favor of cloudflare.pages/domain.Domain""", DeprecationWarning)
+
     @overload
     def __init__(__self__,
                  resource_name: str,
@@ -241,7 +246,7 @@ class PagesDomain(pulumi.CustomResource):
         import pulumi
         import pulumi_cloudflare as cloudflare
 
-        example_pages_domain = cloudflare.PagesDomain("example_pages_domain",
+        example_pages_domain = cloudflare.pages.Domain("example_pages_domain",
             account_id="023e105f4ecef8ad9ca31a8372d0c353",
             project_name="this-is-my-project-01",
             name="this-is-my-domain-01.com")
@@ -276,7 +281,7 @@ class PagesDomain(pulumi.CustomResource):
         import pulumi
         import pulumi_cloudflare as cloudflare
 
-        example_pages_domain = cloudflare.PagesDomain("example_pages_domain",
+        example_pages_domain = cloudflare.pages.Domain("example_pages_domain",
             account_id="023e105f4ecef8ad9ca31a8372d0c353",
             project_name="this-is-my-project-01",
             name="this-is-my-domain-01.com")
@@ -308,6 +313,7 @@ class PagesDomain(pulumi.CustomResource):
                  name: Optional[pulumi.Input[_builtins.str]] = None,
                  project_name: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
+        pulumi.log.warn("""PagesDomain is deprecated: cloudflare.index/pagesdomain.PagesDomain has been deprecated in favor of cloudflare.pages/domain.Domain""")
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
             raise TypeError('Expected resource options to be a ResourceOptions instance')

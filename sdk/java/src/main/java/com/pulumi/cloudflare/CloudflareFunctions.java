@@ -35807,8 +35807,8 @@ public final class CloudflareFunctions {
      * import com.pulumi.Context;
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
-     * import com.pulumi.cloudflare.CloudflareFunctions;
-     * import com.pulumi.cloudflare.inputs.GetPagesDomainArgs;
+     * import com.pulumi.cloudflare.pages.PagesFunctions;
+     * import com.pulumi.cloudflare.pages.inputs.GetDomainArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -35822,7 +35822,7 @@ public final class CloudflareFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var examplePagesDomain = CloudflareFunctions.getPagesDomain(GetPagesDomainArgs.builder()
+     *         final var examplePagesDomain = PagesFunctions.getDomain(GetDomainArgs.builder()
      *             .accountId("023e105f4ecef8ad9ca31a8372d0c353")
      *             .projectName("this-is-my-project-01")
      *             .domainName("this-is-my-domain-01.com")
@@ -35833,7 +35833,11 @@ public final class CloudflareFunctions {
      * }
      * </pre>
      * 
+     * @deprecated
+     * cloudflare.index/getpagesdomain.getPagesDomain has been deprecated in favor of cloudflare.pages/getdomain.getDomain
+     * 
      */
+    @Deprecated /* cloudflare.index/getpagesdomain.getPagesDomain has been deprecated in favor of cloudflare.pages/getdomain.getDomain */
     public static Output<GetPagesDomainResult> getPagesDomain(GetPagesDomainArgs args) {
         return getPagesDomain(args, InvokeOptions.Empty);
     }
@@ -35847,8 +35851,8 @@ public final class CloudflareFunctions {
      * import com.pulumi.Context;
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
-     * import com.pulumi.cloudflare.CloudflareFunctions;
-     * import com.pulumi.cloudflare.inputs.GetPagesDomainArgs;
+     * import com.pulumi.cloudflare.pages.PagesFunctions;
+     * import com.pulumi.cloudflare.pages.inputs.GetDomainArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -35862,7 +35866,7 @@ public final class CloudflareFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var examplePagesDomain = CloudflareFunctions.getPagesDomain(GetPagesDomainArgs.builder()
+     *         final var examplePagesDomain = PagesFunctions.getDomain(GetDomainArgs.builder()
      *             .accountId("023e105f4ecef8ad9ca31a8372d0c353")
      *             .projectName("this-is-my-project-01")
      *             .domainName("this-is-my-domain-01.com")
@@ -35873,7 +35877,11 @@ public final class CloudflareFunctions {
      * }
      * </pre>
      * 
+     * @deprecated
+     * cloudflare.index/getpagesdomain.getPagesDomain has been deprecated in favor of cloudflare.pages/getdomain.getDomain
+     * 
      */
+    @Deprecated /* cloudflare.index/getpagesdomain.getPagesDomain has been deprecated in favor of cloudflare.pages/getdomain.getDomain */
     public static CompletableFuture<GetPagesDomainResult> getPagesDomainPlain(GetPagesDomainPlainArgs args) {
         return getPagesDomainPlain(args, InvokeOptions.Empty);
     }
@@ -35887,8 +35895,8 @@ public final class CloudflareFunctions {
      * import com.pulumi.Context;
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
-     * import com.pulumi.cloudflare.CloudflareFunctions;
-     * import com.pulumi.cloudflare.inputs.GetPagesDomainArgs;
+     * import com.pulumi.cloudflare.pages.PagesFunctions;
+     * import com.pulumi.cloudflare.pages.inputs.GetDomainArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -35902,7 +35910,7 @@ public final class CloudflareFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var examplePagesDomain = CloudflareFunctions.getPagesDomain(GetPagesDomainArgs.builder()
+     *         final var examplePagesDomain = PagesFunctions.getDomain(GetDomainArgs.builder()
      *             .accountId("023e105f4ecef8ad9ca31a8372d0c353")
      *             .projectName("this-is-my-project-01")
      *             .domainName("this-is-my-domain-01.com")
@@ -35913,7 +35921,11 @@ public final class CloudflareFunctions {
      * }
      * </pre>
      * 
+     * @deprecated
+     * cloudflare.index/getpagesdomain.getPagesDomain has been deprecated in favor of cloudflare.pages/getdomain.getDomain
+     * 
      */
+    @Deprecated /* cloudflare.index/getpagesdomain.getPagesDomain has been deprecated in favor of cloudflare.pages/getdomain.getDomain */
     public static Output<GetPagesDomainResult> getPagesDomain(GetPagesDomainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("cloudflare:index/getPagesDomain:getPagesDomain", TypeShape.of(GetPagesDomainResult.class), args, Utilities.withVersion(options));
     }
@@ -35927,8 +35939,8 @@ public final class CloudflareFunctions {
      * import com.pulumi.Context;
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
-     * import com.pulumi.cloudflare.CloudflareFunctions;
-     * import com.pulumi.cloudflare.inputs.GetPagesDomainArgs;
+     * import com.pulumi.cloudflare.pages.PagesFunctions;
+     * import com.pulumi.cloudflare.pages.inputs.GetDomainArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -35942,7 +35954,7 @@ public final class CloudflareFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var examplePagesDomain = CloudflareFunctions.getPagesDomain(GetPagesDomainArgs.builder()
+     *         final var examplePagesDomain = PagesFunctions.getDomain(GetDomainArgs.builder()
      *             .accountId("023e105f4ecef8ad9ca31a8372d0c353")
      *             .projectName("this-is-my-project-01")
      *             .domainName("this-is-my-domain-01.com")
@@ -35953,7 +35965,11 @@ public final class CloudflareFunctions {
      * }
      * </pre>
      * 
+     * @deprecated
+     * cloudflare.index/getpagesdomain.getPagesDomain has been deprecated in favor of cloudflare.pages/getdomain.getDomain
+     * 
      */
+    @Deprecated /* cloudflare.index/getpagesdomain.getPagesDomain has been deprecated in favor of cloudflare.pages/getdomain.getDomain */
     public static Output<GetPagesDomainResult> getPagesDomain(GetPagesDomainArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("cloudflare:index/getPagesDomain:getPagesDomain", TypeShape.of(GetPagesDomainResult.class), args, Utilities.withVersion(options));
     }
@@ -35967,8 +35983,8 @@ public final class CloudflareFunctions {
      * import com.pulumi.Context;
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
-     * import com.pulumi.cloudflare.CloudflareFunctions;
-     * import com.pulumi.cloudflare.inputs.GetPagesDomainArgs;
+     * import com.pulumi.cloudflare.pages.PagesFunctions;
+     * import com.pulumi.cloudflare.pages.inputs.GetDomainArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -35982,7 +35998,7 @@ public final class CloudflareFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var examplePagesDomain = CloudflareFunctions.getPagesDomain(GetPagesDomainArgs.builder()
+     *         final var examplePagesDomain = PagesFunctions.getDomain(GetDomainArgs.builder()
      *             .accountId("023e105f4ecef8ad9ca31a8372d0c353")
      *             .projectName("this-is-my-project-01")
      *             .domainName("this-is-my-domain-01.com")
@@ -35993,7 +36009,11 @@ public final class CloudflareFunctions {
      * }
      * </pre>
      * 
+     * @deprecated
+     * cloudflare.index/getpagesdomain.getPagesDomain has been deprecated in favor of cloudflare.pages/getdomain.getDomain
+     * 
      */
+    @Deprecated /* cloudflare.index/getpagesdomain.getPagesDomain has been deprecated in favor of cloudflare.pages/getdomain.getDomain */
     public static CompletableFuture<GetPagesDomainResult> getPagesDomainPlain(GetPagesDomainPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("cloudflare:index/getPagesDomain:getPagesDomain", TypeShape.of(GetPagesDomainResult.class), args, Utilities.withVersion(options));
     }
@@ -36007,8 +36027,8 @@ public final class CloudflareFunctions {
      * import com.pulumi.Context;
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
-     * import com.pulumi.cloudflare.CloudflareFunctions;
-     * import com.pulumi.cloudflare.inputs.GetPagesDomainsArgs;
+     * import com.pulumi.cloudflare.pages.PagesFunctions;
+     * import com.pulumi.cloudflare.pages.inputs.GetDomainsArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -36022,7 +36042,7 @@ public final class CloudflareFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var examplePagesDomains = CloudflareFunctions.getPagesDomains(GetPagesDomainsArgs.builder()
+     *         final var examplePagesDomains = PagesFunctions.getDomains(GetDomainsArgs.builder()
      *             .accountId("023e105f4ecef8ad9ca31a8372d0c353")
      *             .projectName("this-is-my-project-01")
      *             .build());
@@ -36032,7 +36052,11 @@ public final class CloudflareFunctions {
      * }
      * </pre>
      * 
+     * @deprecated
+     * cloudflare.index/getpagesdomains.getPagesDomains has been deprecated in favor of cloudflare.pages/getdomains.getDomains
+     * 
      */
+    @Deprecated /* cloudflare.index/getpagesdomains.getPagesDomains has been deprecated in favor of cloudflare.pages/getdomains.getDomains */
     public static Output<GetPagesDomainsInvokeResult> getPagesDomains(GetPagesDomainsArgs args) {
         return getPagesDomains(args, InvokeOptions.Empty);
     }
@@ -36046,8 +36070,8 @@ public final class CloudflareFunctions {
      * import com.pulumi.Context;
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
-     * import com.pulumi.cloudflare.CloudflareFunctions;
-     * import com.pulumi.cloudflare.inputs.GetPagesDomainsArgs;
+     * import com.pulumi.cloudflare.pages.PagesFunctions;
+     * import com.pulumi.cloudflare.pages.inputs.GetDomainsArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -36061,7 +36085,7 @@ public final class CloudflareFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var examplePagesDomains = CloudflareFunctions.getPagesDomains(GetPagesDomainsArgs.builder()
+     *         final var examplePagesDomains = PagesFunctions.getDomains(GetDomainsArgs.builder()
      *             .accountId("023e105f4ecef8ad9ca31a8372d0c353")
      *             .projectName("this-is-my-project-01")
      *             .build());
@@ -36071,7 +36095,11 @@ public final class CloudflareFunctions {
      * }
      * </pre>
      * 
+     * @deprecated
+     * cloudflare.index/getpagesdomains.getPagesDomains has been deprecated in favor of cloudflare.pages/getdomains.getDomains
+     * 
      */
+    @Deprecated /* cloudflare.index/getpagesdomains.getPagesDomains has been deprecated in favor of cloudflare.pages/getdomains.getDomains */
     public static CompletableFuture<GetPagesDomainsInvokeResult> getPagesDomainsPlain(GetPagesDomainsPlainArgs args) {
         return getPagesDomainsPlain(args, InvokeOptions.Empty);
     }
@@ -36085,8 +36113,8 @@ public final class CloudflareFunctions {
      * import com.pulumi.Context;
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
-     * import com.pulumi.cloudflare.CloudflareFunctions;
-     * import com.pulumi.cloudflare.inputs.GetPagesDomainsArgs;
+     * import com.pulumi.cloudflare.pages.PagesFunctions;
+     * import com.pulumi.cloudflare.pages.inputs.GetDomainsArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -36100,7 +36128,7 @@ public final class CloudflareFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var examplePagesDomains = CloudflareFunctions.getPagesDomains(GetPagesDomainsArgs.builder()
+     *         final var examplePagesDomains = PagesFunctions.getDomains(GetDomainsArgs.builder()
      *             .accountId("023e105f4ecef8ad9ca31a8372d0c353")
      *             .projectName("this-is-my-project-01")
      *             .build());
@@ -36110,7 +36138,11 @@ public final class CloudflareFunctions {
      * }
      * </pre>
      * 
+     * @deprecated
+     * cloudflare.index/getpagesdomains.getPagesDomains has been deprecated in favor of cloudflare.pages/getdomains.getDomains
+     * 
      */
+    @Deprecated /* cloudflare.index/getpagesdomains.getPagesDomains has been deprecated in favor of cloudflare.pages/getdomains.getDomains */
     public static Output<GetPagesDomainsInvokeResult> getPagesDomains(GetPagesDomainsArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("cloudflare:index/getPagesDomains:getPagesDomains", TypeShape.of(GetPagesDomainsInvokeResult.class), args, Utilities.withVersion(options));
     }
@@ -36124,8 +36156,8 @@ public final class CloudflareFunctions {
      * import com.pulumi.Context;
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
-     * import com.pulumi.cloudflare.CloudflareFunctions;
-     * import com.pulumi.cloudflare.inputs.GetPagesDomainsArgs;
+     * import com.pulumi.cloudflare.pages.PagesFunctions;
+     * import com.pulumi.cloudflare.pages.inputs.GetDomainsArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -36139,7 +36171,7 @@ public final class CloudflareFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var examplePagesDomains = CloudflareFunctions.getPagesDomains(GetPagesDomainsArgs.builder()
+     *         final var examplePagesDomains = PagesFunctions.getDomains(GetDomainsArgs.builder()
      *             .accountId("023e105f4ecef8ad9ca31a8372d0c353")
      *             .projectName("this-is-my-project-01")
      *             .build());
@@ -36149,7 +36181,11 @@ public final class CloudflareFunctions {
      * }
      * </pre>
      * 
+     * @deprecated
+     * cloudflare.index/getpagesdomains.getPagesDomains has been deprecated in favor of cloudflare.pages/getdomains.getDomains
+     * 
      */
+    @Deprecated /* cloudflare.index/getpagesdomains.getPagesDomains has been deprecated in favor of cloudflare.pages/getdomains.getDomains */
     public static Output<GetPagesDomainsInvokeResult> getPagesDomains(GetPagesDomainsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("cloudflare:index/getPagesDomains:getPagesDomains", TypeShape.of(GetPagesDomainsInvokeResult.class), args, Utilities.withVersion(options));
     }
@@ -36163,8 +36199,8 @@ public final class CloudflareFunctions {
      * import com.pulumi.Context;
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
-     * import com.pulumi.cloudflare.CloudflareFunctions;
-     * import com.pulumi.cloudflare.inputs.GetPagesDomainsArgs;
+     * import com.pulumi.cloudflare.pages.PagesFunctions;
+     * import com.pulumi.cloudflare.pages.inputs.GetDomainsArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -36178,7 +36214,7 @@ public final class CloudflareFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var examplePagesDomains = CloudflareFunctions.getPagesDomains(GetPagesDomainsArgs.builder()
+     *         final var examplePagesDomains = PagesFunctions.getDomains(GetDomainsArgs.builder()
      *             .accountId("023e105f4ecef8ad9ca31a8372d0c353")
      *             .projectName("this-is-my-project-01")
      *             .build());
@@ -36188,7 +36224,11 @@ public final class CloudflareFunctions {
      * }
      * </pre>
      * 
+     * @deprecated
+     * cloudflare.index/getpagesdomains.getPagesDomains has been deprecated in favor of cloudflare.pages/getdomains.getDomains
+     * 
      */
+    @Deprecated /* cloudflare.index/getpagesdomains.getPagesDomains has been deprecated in favor of cloudflare.pages/getdomains.getDomains */
     public static CompletableFuture<GetPagesDomainsInvokeResult> getPagesDomainsPlain(GetPagesDomainsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("cloudflare:index/getPagesDomains:getPagesDomains", TypeShape.of(GetPagesDomainsInvokeResult.class), args, Utilities.withVersion(options));
     }
@@ -36202,8 +36242,8 @@ public final class CloudflareFunctions {
      * import com.pulumi.Context;
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
-     * import com.pulumi.cloudflare.CloudflareFunctions;
-     * import com.pulumi.cloudflare.inputs.GetPagesProjectArgs;
+     * import com.pulumi.cloudflare.pages.PagesFunctions;
+     * import com.pulumi.cloudflare.pages.inputs.GetProjectArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -36217,7 +36257,7 @@ public final class CloudflareFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var examplePagesProject = CloudflareFunctions.getPagesProject(GetPagesProjectArgs.builder()
+     *         final var examplePagesProject = PagesFunctions.getProject(GetProjectArgs.builder()
      *             .accountId("023e105f4ecef8ad9ca31a8372d0c353")
      *             .projectName("this-is-my-project-01")
      *             .build());
@@ -36227,7 +36267,11 @@ public final class CloudflareFunctions {
      * }
      * </pre>
      * 
+     * @deprecated
+     * cloudflare.index/getpagesproject.getPagesProject has been deprecated in favor of cloudflare.pages/getproject.getProject
+     * 
      */
+    @Deprecated /* cloudflare.index/getpagesproject.getPagesProject has been deprecated in favor of cloudflare.pages/getproject.getProject */
     public static Output<GetPagesProjectResult> getPagesProject(GetPagesProjectArgs args) {
         return getPagesProject(args, InvokeOptions.Empty);
     }
@@ -36241,8 +36285,8 @@ public final class CloudflareFunctions {
      * import com.pulumi.Context;
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
-     * import com.pulumi.cloudflare.CloudflareFunctions;
-     * import com.pulumi.cloudflare.inputs.GetPagesProjectArgs;
+     * import com.pulumi.cloudflare.pages.PagesFunctions;
+     * import com.pulumi.cloudflare.pages.inputs.GetProjectArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -36256,7 +36300,7 @@ public final class CloudflareFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var examplePagesProject = CloudflareFunctions.getPagesProject(GetPagesProjectArgs.builder()
+     *         final var examplePagesProject = PagesFunctions.getProject(GetProjectArgs.builder()
      *             .accountId("023e105f4ecef8ad9ca31a8372d0c353")
      *             .projectName("this-is-my-project-01")
      *             .build());
@@ -36266,7 +36310,11 @@ public final class CloudflareFunctions {
      * }
      * </pre>
      * 
+     * @deprecated
+     * cloudflare.index/getpagesproject.getPagesProject has been deprecated in favor of cloudflare.pages/getproject.getProject
+     * 
      */
+    @Deprecated /* cloudflare.index/getpagesproject.getPagesProject has been deprecated in favor of cloudflare.pages/getproject.getProject */
     public static CompletableFuture<GetPagesProjectResult> getPagesProjectPlain(GetPagesProjectPlainArgs args) {
         return getPagesProjectPlain(args, InvokeOptions.Empty);
     }
@@ -36280,8 +36328,8 @@ public final class CloudflareFunctions {
      * import com.pulumi.Context;
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
-     * import com.pulumi.cloudflare.CloudflareFunctions;
-     * import com.pulumi.cloudflare.inputs.GetPagesProjectArgs;
+     * import com.pulumi.cloudflare.pages.PagesFunctions;
+     * import com.pulumi.cloudflare.pages.inputs.GetProjectArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -36295,7 +36343,7 @@ public final class CloudflareFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var examplePagesProject = CloudflareFunctions.getPagesProject(GetPagesProjectArgs.builder()
+     *         final var examplePagesProject = PagesFunctions.getProject(GetProjectArgs.builder()
      *             .accountId("023e105f4ecef8ad9ca31a8372d0c353")
      *             .projectName("this-is-my-project-01")
      *             .build());
@@ -36305,7 +36353,11 @@ public final class CloudflareFunctions {
      * }
      * </pre>
      * 
+     * @deprecated
+     * cloudflare.index/getpagesproject.getPagesProject has been deprecated in favor of cloudflare.pages/getproject.getProject
+     * 
      */
+    @Deprecated /* cloudflare.index/getpagesproject.getPagesProject has been deprecated in favor of cloudflare.pages/getproject.getProject */
     public static Output<GetPagesProjectResult> getPagesProject(GetPagesProjectArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("cloudflare:index/getPagesProject:getPagesProject", TypeShape.of(GetPagesProjectResult.class), args, Utilities.withVersion(options));
     }
@@ -36319,8 +36371,8 @@ public final class CloudflareFunctions {
      * import com.pulumi.Context;
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
-     * import com.pulumi.cloudflare.CloudflareFunctions;
-     * import com.pulumi.cloudflare.inputs.GetPagesProjectArgs;
+     * import com.pulumi.cloudflare.pages.PagesFunctions;
+     * import com.pulumi.cloudflare.pages.inputs.GetProjectArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -36334,7 +36386,7 @@ public final class CloudflareFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var examplePagesProject = CloudflareFunctions.getPagesProject(GetPagesProjectArgs.builder()
+     *         final var examplePagesProject = PagesFunctions.getProject(GetProjectArgs.builder()
      *             .accountId("023e105f4ecef8ad9ca31a8372d0c353")
      *             .projectName("this-is-my-project-01")
      *             .build());
@@ -36344,7 +36396,11 @@ public final class CloudflareFunctions {
      * }
      * </pre>
      * 
+     * @deprecated
+     * cloudflare.index/getpagesproject.getPagesProject has been deprecated in favor of cloudflare.pages/getproject.getProject
+     * 
      */
+    @Deprecated /* cloudflare.index/getpagesproject.getPagesProject has been deprecated in favor of cloudflare.pages/getproject.getProject */
     public static Output<GetPagesProjectResult> getPagesProject(GetPagesProjectArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("cloudflare:index/getPagesProject:getPagesProject", TypeShape.of(GetPagesProjectResult.class), args, Utilities.withVersion(options));
     }
@@ -36358,8 +36414,8 @@ public final class CloudflareFunctions {
      * import com.pulumi.Context;
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
-     * import com.pulumi.cloudflare.CloudflareFunctions;
-     * import com.pulumi.cloudflare.inputs.GetPagesProjectArgs;
+     * import com.pulumi.cloudflare.pages.PagesFunctions;
+     * import com.pulumi.cloudflare.pages.inputs.GetProjectArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -36373,7 +36429,7 @@ public final class CloudflareFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var examplePagesProject = CloudflareFunctions.getPagesProject(GetPagesProjectArgs.builder()
+     *         final var examplePagesProject = PagesFunctions.getProject(GetProjectArgs.builder()
      *             .accountId("023e105f4ecef8ad9ca31a8372d0c353")
      *             .projectName("this-is-my-project-01")
      *             .build());
@@ -36383,7 +36439,11 @@ public final class CloudflareFunctions {
      * }
      * </pre>
      * 
+     * @deprecated
+     * cloudflare.index/getpagesproject.getPagesProject has been deprecated in favor of cloudflare.pages/getproject.getProject
+     * 
      */
+    @Deprecated /* cloudflare.index/getpagesproject.getPagesProject has been deprecated in favor of cloudflare.pages/getproject.getProject */
     public static CompletableFuture<GetPagesProjectResult> getPagesProjectPlain(GetPagesProjectPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("cloudflare:index/getPagesProject:getPagesProject", TypeShape.of(GetPagesProjectResult.class), args, Utilities.withVersion(options));
     }
@@ -36397,8 +36457,8 @@ public final class CloudflareFunctions {
      * import com.pulumi.Context;
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
-     * import com.pulumi.cloudflare.CloudflareFunctions;
-     * import com.pulumi.cloudflare.inputs.GetPagesProjectsArgs;
+     * import com.pulumi.cloudflare.pages.PagesFunctions;
+     * import com.pulumi.cloudflare.pages.inputs.GetProjectsArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -36412,7 +36472,7 @@ public final class CloudflareFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var examplePagesProjects = CloudflareFunctions.getPagesProjects(GetPagesProjectsArgs.builder()
+     *         final var examplePagesProjects = PagesFunctions.getProjects(GetProjectsArgs.builder()
      *             .accountId("023e105f4ecef8ad9ca31a8372d0c353")
      *             .build());
      * 
@@ -36421,7 +36481,11 @@ public final class CloudflareFunctions {
      * }
      * </pre>
      * 
+     * @deprecated
+     * cloudflare.index/getpagesprojects.getPagesProjects has been deprecated in favor of cloudflare.pages/getprojects.getProjects
+     * 
      */
+    @Deprecated /* cloudflare.index/getpagesprojects.getPagesProjects has been deprecated in favor of cloudflare.pages/getprojects.getProjects */
     public static Output<GetPagesProjectsInvokeResult> getPagesProjects(GetPagesProjectsArgs args) {
         return getPagesProjects(args, InvokeOptions.Empty);
     }
@@ -36435,8 +36499,8 @@ public final class CloudflareFunctions {
      * import com.pulumi.Context;
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
-     * import com.pulumi.cloudflare.CloudflareFunctions;
-     * import com.pulumi.cloudflare.inputs.GetPagesProjectsArgs;
+     * import com.pulumi.cloudflare.pages.PagesFunctions;
+     * import com.pulumi.cloudflare.pages.inputs.GetProjectsArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -36450,7 +36514,7 @@ public final class CloudflareFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var examplePagesProjects = CloudflareFunctions.getPagesProjects(GetPagesProjectsArgs.builder()
+     *         final var examplePagesProjects = PagesFunctions.getProjects(GetProjectsArgs.builder()
      *             .accountId("023e105f4ecef8ad9ca31a8372d0c353")
      *             .build());
      * 
@@ -36459,7 +36523,11 @@ public final class CloudflareFunctions {
      * }
      * </pre>
      * 
+     * @deprecated
+     * cloudflare.index/getpagesprojects.getPagesProjects has been deprecated in favor of cloudflare.pages/getprojects.getProjects
+     * 
      */
+    @Deprecated /* cloudflare.index/getpagesprojects.getPagesProjects has been deprecated in favor of cloudflare.pages/getprojects.getProjects */
     public static CompletableFuture<GetPagesProjectsInvokeResult> getPagesProjectsPlain(GetPagesProjectsPlainArgs args) {
         return getPagesProjectsPlain(args, InvokeOptions.Empty);
     }
@@ -36473,8 +36541,8 @@ public final class CloudflareFunctions {
      * import com.pulumi.Context;
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
-     * import com.pulumi.cloudflare.CloudflareFunctions;
-     * import com.pulumi.cloudflare.inputs.GetPagesProjectsArgs;
+     * import com.pulumi.cloudflare.pages.PagesFunctions;
+     * import com.pulumi.cloudflare.pages.inputs.GetProjectsArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -36488,7 +36556,7 @@ public final class CloudflareFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var examplePagesProjects = CloudflareFunctions.getPagesProjects(GetPagesProjectsArgs.builder()
+     *         final var examplePagesProjects = PagesFunctions.getProjects(GetProjectsArgs.builder()
      *             .accountId("023e105f4ecef8ad9ca31a8372d0c353")
      *             .build());
      * 
@@ -36497,7 +36565,11 @@ public final class CloudflareFunctions {
      * }
      * </pre>
      * 
+     * @deprecated
+     * cloudflare.index/getpagesprojects.getPagesProjects has been deprecated in favor of cloudflare.pages/getprojects.getProjects
+     * 
      */
+    @Deprecated /* cloudflare.index/getpagesprojects.getPagesProjects has been deprecated in favor of cloudflare.pages/getprojects.getProjects */
     public static Output<GetPagesProjectsInvokeResult> getPagesProjects(GetPagesProjectsArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("cloudflare:index/getPagesProjects:getPagesProjects", TypeShape.of(GetPagesProjectsInvokeResult.class), args, Utilities.withVersion(options));
     }
@@ -36511,8 +36583,8 @@ public final class CloudflareFunctions {
      * import com.pulumi.Context;
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
-     * import com.pulumi.cloudflare.CloudflareFunctions;
-     * import com.pulumi.cloudflare.inputs.GetPagesProjectsArgs;
+     * import com.pulumi.cloudflare.pages.PagesFunctions;
+     * import com.pulumi.cloudflare.pages.inputs.GetProjectsArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -36526,7 +36598,7 @@ public final class CloudflareFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var examplePagesProjects = CloudflareFunctions.getPagesProjects(GetPagesProjectsArgs.builder()
+     *         final var examplePagesProjects = PagesFunctions.getProjects(GetProjectsArgs.builder()
      *             .accountId("023e105f4ecef8ad9ca31a8372d0c353")
      *             .build());
      * 
@@ -36535,7 +36607,11 @@ public final class CloudflareFunctions {
      * }
      * </pre>
      * 
+     * @deprecated
+     * cloudflare.index/getpagesprojects.getPagesProjects has been deprecated in favor of cloudflare.pages/getprojects.getProjects
+     * 
      */
+    @Deprecated /* cloudflare.index/getpagesprojects.getPagesProjects has been deprecated in favor of cloudflare.pages/getprojects.getProjects */
     public static Output<GetPagesProjectsInvokeResult> getPagesProjects(GetPagesProjectsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("cloudflare:index/getPagesProjects:getPagesProjects", TypeShape.of(GetPagesProjectsInvokeResult.class), args, Utilities.withVersion(options));
     }
@@ -36549,8 +36625,8 @@ public final class CloudflareFunctions {
      * import com.pulumi.Context;
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
-     * import com.pulumi.cloudflare.CloudflareFunctions;
-     * import com.pulumi.cloudflare.inputs.GetPagesProjectsArgs;
+     * import com.pulumi.cloudflare.pages.PagesFunctions;
+     * import com.pulumi.cloudflare.pages.inputs.GetProjectsArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -36564,7 +36640,7 @@ public final class CloudflareFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
-     *         final var examplePagesProjects = CloudflareFunctions.getPagesProjects(GetPagesProjectsArgs.builder()
+     *         final var examplePagesProjects = PagesFunctions.getProjects(GetProjectsArgs.builder()
      *             .accountId("023e105f4ecef8ad9ca31a8372d0c353")
      *             .build());
      * 
@@ -36573,7 +36649,11 @@ public final class CloudflareFunctions {
      * }
      * </pre>
      * 
+     * @deprecated
+     * cloudflare.index/getpagesprojects.getPagesProjects has been deprecated in favor of cloudflare.pages/getprojects.getProjects
+     * 
      */
+    @Deprecated /* cloudflare.index/getpagesprojects.getPagesProjects has been deprecated in favor of cloudflare.pages/getprojects.getProjects */
     public static CompletableFuture<GetPagesProjectsInvokeResult> getPagesProjectsPlain(GetPagesProjectsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("cloudflare:index/getPagesProjects:getPagesProjects", TypeShape.of(GetPagesProjectsInvokeResult.class), args, Utilities.withVersion(options));
     }

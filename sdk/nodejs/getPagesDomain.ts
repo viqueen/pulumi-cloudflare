@@ -13,14 +13,16 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as cloudflare from "@pulumi/cloudflare";
  *
- * const examplePagesDomain = cloudflare.getPagesDomain({
+ * const examplePagesDomain = cloudflare.pages.getDomain({
  *     accountId: "023e105f4ecef8ad9ca31a8372d0c353",
  *     projectName: "this-is-my-project-01",
  *     domainName: "this-is-my-domain-01.com",
  * });
  * ```
  */
+/** @deprecated cloudflare.index/getpagesdomain.getPagesDomain has been deprecated in favor of cloudflare.pages/getdomain.getDomain */
 export function getPagesDomain(args: GetPagesDomainArgs, opts?: pulumi.InvokeOptions): Promise<GetPagesDomainResult> {
+    pulumi.log.warn("getPagesDomain is deprecated: cloudflare.index/getpagesdomain.getPagesDomain has been deprecated in favor of cloudflare.pages/getdomain.getDomain")
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("cloudflare:index/getPagesDomain:getPagesDomain", {
         "accountId": args.accountId,
@@ -92,14 +94,16 @@ export interface GetPagesDomainResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as cloudflare from "@pulumi/cloudflare";
  *
- * const examplePagesDomain = cloudflare.getPagesDomain({
+ * const examplePagesDomain = cloudflare.pages.getDomain({
  *     accountId: "023e105f4ecef8ad9ca31a8372d0c353",
  *     projectName: "this-is-my-project-01",
  *     domainName: "this-is-my-domain-01.com",
  * });
  * ```
  */
+/** @deprecated cloudflare.index/getpagesdomain.getPagesDomain has been deprecated in favor of cloudflare.pages/getdomain.getDomain */
 export function getPagesDomainOutput(args: GetPagesDomainOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetPagesDomainResult> {
+    pulumi.log.warn("getPagesDomain is deprecated: cloudflare.index/getpagesdomain.getPagesDomain has been deprecated in favor of cloudflare.pages/getdomain.getDomain")
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("cloudflare:index/getPagesDomain:getPagesDomain", {
         "accountId": args.accountId,
