@@ -22,6 +22,8 @@ __all__ = [
     'get_pages_projects_output',
 ]
 
+warnings.warn("""cloudflare.index/getpagesprojects.getPagesProjects has been deprecated in favor of cloudflare.pages/getprojects.getProjects""", DeprecationWarning)
+
 @pulumi.output_type
 class GetPagesProjectsResult:
     """
@@ -96,13 +98,14 @@ def get_pages_projects(account_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_cloudflare as cloudflare
 
-    example_pages_projects = cloudflare.get_pages_projects(account_id="023e105f4ecef8ad9ca31a8372d0c353")
+    example_pages_projects = cloudflare.pages.get_projects(account_id="023e105f4ecef8ad9ca31a8372d0c353")
     ```
 
 
     :param _builtins.str account_id: Identifier.
     :param _builtins.int max_items: Max items to fetch, default: 1000
     """
+    pulumi.log.warn("""get_pages_projects is deprecated: cloudflare.index/getpagesprojects.getPagesProjects has been deprecated in favor of cloudflare.pages/getprojects.getProjects""")
     __args__ = dict()
     __args__['accountId'] = account_id
     __args__['maxItems'] = max_items
@@ -124,13 +127,14 @@ def get_pages_projects_output(account_id: Optional[pulumi.Input[_builtins.str]] 
     import pulumi
     import pulumi_cloudflare as cloudflare
 
-    example_pages_projects = cloudflare.get_pages_projects(account_id="023e105f4ecef8ad9ca31a8372d0c353")
+    example_pages_projects = cloudflare.pages.get_projects(account_id="023e105f4ecef8ad9ca31a8372d0c353")
     ```
 
 
     :param _builtins.str account_id: Identifier.
     :param _builtins.int max_items: Max items to fetch, default: 1000
     """
+    pulumi.log.warn("""get_pages_projects is deprecated: cloudflare.index/getpagesprojects.getPagesProjects has been deprecated in favor of cloudflare.pages/getprojects.getProjects""")
     __args__ = dict()
     __args__['accountId'] = account_id
     __args__['maxItems'] = max_items

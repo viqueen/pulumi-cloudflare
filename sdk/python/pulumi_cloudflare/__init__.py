@@ -629,8 +629,11 @@ from . import outputs
 if typing.TYPE_CHECKING:
     import pulumi_cloudflare.config as __config
     config = __config
+    import pulumi_cloudflare.pages as __pages
+    pages = __pages
 else:
     config = _utilities.lazy_import('pulumi_cloudflare.config')
+    pages = _utilities.lazy_import('pulumi_cloudflare.pages')
 
 _utilities.register(
     resource_modules="""
@@ -2633,6 +2636,22 @@ _utilities.register(
   "fqn": "pulumi_cloudflare",
   "classes": {
    "cloudflare:index/zoneSubscription:ZoneSubscription": "ZoneSubscription"
+  }
+ },
+ {
+  "pkg": "cloudflare",
+  "mod": "pages/domain",
+  "fqn": "pulumi_cloudflare.pages",
+  "classes": {
+   "cloudflare:pages/domain:Domain": "Domain"
+  }
+ },
+ {
+  "pkg": "cloudflare",
+  "mod": "pages/project",
+  "fqn": "pulumi_cloudflare.pages",
+  "classes": {
+   "cloudflare:pages/project:Project": "Project"
   }
  }
 ]

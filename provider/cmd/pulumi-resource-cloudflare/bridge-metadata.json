@@ -1210,11 +1210,25 @@
                 "majorVersion": 6
             },
             "cloudflare_pages_domain": {
-                "current": "cloudflare:index/pagesDomain:PagesDomain",
+                "current": "cloudflare:pages/domain:Domain",
+                "past": [
+                    {
+                        "name": "cloudflare:index/pagesDomain:PagesDomain",
+                        "inCodegen": true,
+                        "majorVersion": 6
+                    }
+                ],
                 "majorVersion": 6
             },
             "cloudflare_pages_project": {
-                "current": "cloudflare:index/pagesProject:PagesProject",
+                "current": "cloudflare:pages/project:Project",
+                "past": [
+                    {
+                        "name": "cloudflare:index/pagesProject:PagesProject",
+                        "inCodegen": true,
+                        "majorVersion": 6
+                    }
+                ],
                 "majorVersion": 6,
                 "fields": {
                     "canonical_deployment": {
@@ -5849,11 +5863,25 @@
                 }
             },
             "cloudflare_pages_domain": {
-                "current": "cloudflare:index/getPagesDomain:getPagesDomain",
+                "current": "cloudflare:pages/getDomain:getDomain",
+                "past": [
+                    {
+                        "name": "cloudflare:index/getPagesDomain:getPagesDomain",
+                        "inCodegen": true,
+                        "majorVersion": 6
+                    }
+                ],
                 "majorVersion": 6
             },
             "cloudflare_pages_domains": {
-                "current": "cloudflare:index/getPagesDomains:getPagesDomains",
+                "current": "cloudflare:pages/getDomains:getDomains",
+                "past": [
+                    {
+                        "name": "cloudflare:index/getPagesDomains:getPagesDomains",
+                        "inCodegen": true,
+                        "majorVersion": 6
+                    }
+                ],
                 "majorVersion": 6,
                 "fields": {
                     "result": {
@@ -5862,7 +5890,14 @@
                 }
             },
             "cloudflare_pages_project": {
-                "current": "cloudflare:index/getPagesProject:getPagesProject",
+                "current": "cloudflare:pages/getProject:getProject",
+                "past": [
+                    {
+                        "name": "cloudflare:index/getPagesProject:getPagesProject",
+                        "inCodegen": true,
+                        "majorVersion": 6
+                    }
+                ],
                 "majorVersion": 6,
                 "fields": {
                     "canonical_deployment": {
@@ -5969,7 +6004,14 @@
                 }
             },
             "cloudflare_pages_projects": {
-                "current": "cloudflare:index/getPagesProjects:getPagesProjects",
+                "current": "cloudflare:pages/getProjects:getProjects",
+                "past": [
+                    {
+                        "name": "cloudflare:index/getPagesProjects:getPagesProjects",
+                        "inCodegen": true,
+                        "majorVersion": 6
+                    }
+                ],
                 "majorVersion": 6,
                 "fields": {
                     "result": {
@@ -9043,6 +9085,16 @@
                     "cloudflare:index/managedHeaders:ManagedHeaders"
                 ]
             },
+            "cloudflare_pages_domain": {
+                "aliases": [
+                    "cloudflare:index/pagesDomain:PagesDomain"
+                ]
+            },
+            "cloudflare_pages_project": {
+                "aliases": [
+                    "cloudflare:index/pagesProject:PagesProject"
+                ]
+            },
             "cloudflare_workers_cron_trigger": {
                 "aliases": [
                     "cloudflare:index/workerCronTrigger:WorkerCronTrigger"
@@ -9202,6 +9254,28 @@
             "cloudflare_zero_trust_tunnel_cloudflared_virtual_network": {
                 "aliases": [
                     "cloudflare:index/tunnelVirtualNetwork:TunnelVirtualNetwork"
+                ]
+            }
+        },
+        "datasources": {
+            "cloudflare_pages_domain": {
+                "renames": [
+                    "cloudflare:index/getPagesDomain:getPagesDomain"
+                ]
+            },
+            "cloudflare_pages_domains": {
+                "renames": [
+                    "cloudflare:index/getPagesDomains:getPagesDomains"
+                ]
+            },
+            "cloudflare_pages_project": {
+                "renames": [
+                    "cloudflare:index/getPagesProject:getPagesProject"
+                ]
+            },
+            "cloudflare_pages_projects": {
+                "renames": [
+                    "cloudflare:index/getPagesProjects:getPagesProjects"
                 ]
             }
         }

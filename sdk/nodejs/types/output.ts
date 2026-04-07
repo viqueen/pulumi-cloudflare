@@ -44048,3 +44048,3177 @@ export interface ZoneTenantUnit {
     id: string;
 }
 
+export namespace pages {
+    export interface DomainValidationData {
+        errorMessage: string;
+        /**
+         * Available values: "http", "txt".
+         */
+        method: string;
+        /**
+         * Available values: "initializing", "pending", "active", "deactivated", "error".
+         */
+        status: string;
+        txtName: string;
+        txtValue: string;
+    }
+
+    export interface DomainVerificationData {
+        errorMessage: string;
+        /**
+         * Available values: "pending", "active", "deactivated", "blocked", "error".
+         */
+        status: string;
+    }
+
+    export interface GetDomainValidationData {
+        errorMessage: string;
+        /**
+         * Available values: "http", "txt".
+         */
+        method: string;
+        /**
+         * Available values: "initializing", "pending", "active", "deactivated", "error".
+         */
+        status: string;
+        txtName: string;
+        txtValue: string;
+    }
+
+    export interface GetDomainVerificationData {
+        errorMessage: string;
+        /**
+         * Available values: "pending", "active", "deactivated", "blocked", "error".
+         */
+        status: string;
+    }
+
+    export interface GetDomainsResult {
+        /**
+         * Available values: "google", "letsEncrypt".
+         */
+        certificateAuthority: string;
+        createdOn: string;
+        domainId: string;
+        id: string;
+        /**
+         * The domain name.
+         */
+        name: string;
+        /**
+         * Available values: "initializing", "pending", "active", "deactivated", "blocked", "error".
+         */
+        status: string;
+        validationData: outputs.pages.GetDomainsResultValidationData;
+        verificationData: outputs.pages.GetDomainsResultVerificationData;
+        zoneTag: string;
+    }
+
+    export interface GetDomainsResultValidationData {
+        errorMessage: string;
+        /**
+         * Available values: "http", "txt".
+         */
+        method: string;
+        /**
+         * Available values: "initializing", "pending", "active", "deactivated", "error".
+         */
+        status: string;
+        txtName: string;
+        txtValue: string;
+    }
+
+    export interface GetDomainsResultVerificationData {
+        errorMessage: string;
+        /**
+         * Available values: "pending", "active", "deactivated", "blocked", "error".
+         */
+        status: string;
+    }
+
+    export interface GetProjectBuildConfig {
+        /**
+         * Enable build caching for the project.
+         */
+        buildCaching: boolean;
+        /**
+         * Command used to build project.
+         */
+        buildCommand: string;
+        /**
+         * Assets output directory of the build.
+         */
+        destinationDir: string;
+        /**
+         * Directory to run the command.
+         */
+        rootDir: string;
+        /**
+         * The classifying tag for analytics.
+         */
+        webAnalyticsTag: string;
+        /**
+         * The auth token for analytics.
+         */
+        webAnalyticsToken: string;
+    }
+
+    export interface GetProjectCanonicalDeployment {
+        /**
+         * A list of alias URLs pointing to this deployment.
+         */
+        aliases: string[];
+        /**
+         * Configs for the project build process.
+         */
+        buildConfig: outputs.pages.GetProjectCanonicalDeploymentBuildConfig;
+        /**
+         * When the deployment was created.
+         */
+        createdOn: string;
+        /**
+         * Info about what caused the deployment.
+         */
+        deploymentTrigger: outputs.pages.GetProjectCanonicalDeploymentDeploymentTrigger;
+        /**
+         * Environment variables used for builds and Pages Functions.
+         */
+        envVars: {[key: string]: outputs.pages.GetProjectCanonicalDeploymentEnvVars};
+        /**
+         * Type of deploy.
+         * Available values: "preview", "production".
+         */
+        environment: string;
+        /**
+         * Id of the deployment.
+         */
+        id: string;
+        /**
+         * If the deployment has been skipped.
+         */
+        isSkipped: boolean;
+        /**
+         * The status of the deployment.
+         */
+        latestStage: outputs.pages.GetProjectCanonicalDeploymentLatestStage;
+        /**
+         * When the deployment was last modified.
+         */
+        modifiedOn: string;
+        /**
+         * Id of the project.
+         */
+        projectId: string;
+        /**
+         * Name of the project.
+         */
+        projectName: string;
+        /**
+         * Short Id (8 character) of the deployment.
+         */
+        shortId: string;
+        /**
+         * Configs for the project source control.
+         */
+        source: outputs.pages.GetProjectCanonicalDeploymentSource;
+        /**
+         * List of past stages.
+         */
+        stages: outputs.pages.GetProjectCanonicalDeploymentStage[];
+        /**
+         * The live URL to view this deployment.
+         */
+        url: string;
+        /**
+         * Whether the deployment uses functions.
+         */
+        usesFunctions: boolean;
+    }
+
+    export interface GetProjectCanonicalDeploymentBuildConfig {
+        /**
+         * Enable build caching for the project.
+         */
+        buildCaching: boolean;
+        /**
+         * Command used to build project.
+         */
+        buildCommand: string;
+        /**
+         * Assets output directory of the build.
+         */
+        destinationDir: string;
+        /**
+         * Directory to run the command.
+         */
+        rootDir: string;
+        /**
+         * The classifying tag for analytics.
+         */
+        webAnalyticsTag: string;
+        /**
+         * The auth token for analytics.
+         */
+        webAnalyticsToken: string;
+    }
+
+    export interface GetProjectCanonicalDeploymentDeploymentTrigger {
+        /**
+         * Additional info about the trigger.
+         */
+        metadata: outputs.pages.GetProjectCanonicalDeploymentDeploymentTriggerMetadata;
+        /**
+         * What caused the deployment.
+         * Available values: "github:push", "ad*hoc", "deploy*hook".
+         */
+        type: string;
+    }
+
+    export interface GetProjectCanonicalDeploymentDeploymentTriggerMetadata {
+        /**
+         * Where the trigger happened.
+         */
+        branch: string;
+        /**
+         * Whether the deployment trigger commit was dirty.
+         */
+        commitDirty: boolean;
+        /**
+         * Hash of the deployment trigger commit.
+         */
+        commitHash: string;
+        /**
+         * Message of the deployment trigger commit.
+         */
+        commitMessage: string;
+    }
+
+    export interface GetProjectCanonicalDeploymentEnvVars {
+        /**
+         * Available values: "plain*text", "secret*text".
+         */
+        type: string;
+        /**
+         * Environment variable value.
+         */
+        value: string;
+    }
+
+    export interface GetProjectCanonicalDeploymentLatestStage {
+        /**
+         * When the stage ended.
+         */
+        endedOn: string;
+        /**
+         * The current build stage.
+         * Available values: "queued", "initialize", "cloneRepo", "build", "deploy".
+         */
+        name: string;
+        /**
+         * When the stage started.
+         */
+        startedOn: string;
+        /**
+         * State of the current stage.
+         * Available values: "success", "idle", "active", "failure", "canceled".
+         */
+        status: string;
+    }
+
+    export interface GetProjectCanonicalDeploymentSource {
+        config: outputs.pages.GetProjectCanonicalDeploymentSourceConfig;
+        /**
+         * The source control management provider.
+         * Available values: "github", "gitlab".
+         */
+        type: string;
+    }
+
+    export interface GetProjectCanonicalDeploymentSourceConfig {
+        /**
+         * Whether to enable automatic deployments when pushing to the source repository.
+         * When disabled, no deployments (production or preview) will be triggered automatically.
+         *
+         * @deprecated Use `productionDeploymentsEnabled` and `previewDeploymentSetting` for more granular control.
+         */
+        deploymentsEnabled: boolean;
+        /**
+         * The owner of the repository.
+         */
+        owner: string;
+        /**
+         * The owner ID of the repository.
+         */
+        ownerId: string;
+        /**
+         * A list of paths that should be excluded from triggering a preview deployment. Wildcard syntax (`*`) is supported.
+         */
+        pathExcludes: string[];
+        /**
+         * A list of paths that should be watched to trigger a preview deployment. Wildcard syntax (`*`) is supported.
+         */
+        pathIncludes: string[];
+        /**
+         * Whether to enable PR comments.
+         */
+        prCommentsEnabled: boolean;
+        /**
+         * A list of branches that should not trigger a preview deployment. Wildcard syntax (`*`) is supported. Must be used with `previewDeploymentSetting` set to `custom`.
+         */
+        previewBranchExcludes: string[];
+        /**
+         * A list of branches that should trigger a preview deployment. Wildcard syntax (`*`) is supported. Must be used with `previewDeploymentSetting` set to `custom`.
+         */
+        previewBranchIncludes: string[];
+        /**
+         * Controls whether commits to preview branches trigger a preview deployment.
+         * Available values: "all", "none", "custom".
+         */
+        previewDeploymentSetting: string;
+        /**
+         * The production branch of the repository.
+         */
+        productionBranch: string;
+        /**
+         * Whether to trigger a production deployment on commits to the production branch.
+         */
+        productionDeploymentsEnabled: boolean;
+        /**
+         * The ID of the repository.
+         */
+        repoId: string;
+        /**
+         * The name of the repository.
+         */
+        repoName: string;
+    }
+
+    export interface GetProjectCanonicalDeploymentStage {
+        /**
+         * When the stage ended.
+         */
+        endedOn: string;
+        /**
+         * The current build stage.
+         * Available values: "queued", "initialize", "cloneRepo", "build", "deploy".
+         */
+        name: string;
+        /**
+         * When the stage started.
+         */
+        startedOn: string;
+        /**
+         * State of the current stage.
+         * Available values: "success", "idle", "active", "failure", "canceled".
+         */
+        status: string;
+    }
+
+    export interface GetProjectDeploymentConfigs {
+        /**
+         * Configs for preview deploys.
+         */
+        preview: outputs.pages.GetProjectDeploymentConfigsPreview;
+        /**
+         * Configs for production deploys.
+         */
+        production: outputs.pages.GetProjectDeploymentConfigsProduction;
+    }
+
+    export interface GetProjectDeploymentConfigsPreview {
+        /**
+         * Constellation bindings used for Pages Functions.
+         */
+        aiBindings: {[key: string]: outputs.pages.GetProjectDeploymentConfigsPreviewAiBindings};
+        /**
+         * Whether to always use the latest compatibility date for Pages Functions.
+         */
+        alwaysUseLatestCompatibilityDate: boolean;
+        /**
+         * Analytics Engine bindings used for Pages Functions.
+         */
+        analyticsEngineDatasets: {[key: string]: outputs.pages.GetProjectDeploymentConfigsPreviewAnalyticsEngineDatasets};
+        /**
+         * Browser bindings used for Pages Functions.
+         */
+        browsers: {[key: string]: outputs.pages.GetProjectDeploymentConfigsPreviewBrowsers};
+        /**
+         * The major version of the build image to use for Pages Functions.
+         */
+        buildImageMajorVersion: number;
+        /**
+         * Compatibility date used for Pages Functions.
+         */
+        compatibilityDate: string;
+        /**
+         * Compatibility flags used for Pages Functions.
+         */
+        compatibilityFlags: string[];
+        /**
+         * D1 databases used for Pages Functions.
+         */
+        d1Databases: {[key: string]: outputs.pages.GetProjectDeploymentConfigsPreviewD1Databases};
+        /**
+         * Durable Object namespaces used for Pages Functions.
+         */
+        durableObjectNamespaces: {[key: string]: outputs.pages.GetProjectDeploymentConfigsPreviewDurableObjectNamespaces};
+        /**
+         * Environment variables used for builds and Pages Functions.
+         */
+        envVars: {[key: string]: outputs.pages.GetProjectDeploymentConfigsPreviewEnvVars};
+        /**
+         * Whether to fail open when the deployment config cannot be applied.
+         */
+        failOpen: boolean;
+        /**
+         * Hyperdrive bindings used for Pages Functions.
+         */
+        hyperdriveBindings: {[key: string]: outputs.pages.GetProjectDeploymentConfigsPreviewHyperdriveBindings};
+        /**
+         * KV namespaces used for Pages Functions.
+         */
+        kvNamespaces: {[key: string]: outputs.pages.GetProjectDeploymentConfigsPreviewKvNamespaces};
+        /**
+         * Limits for Pages Functions.
+         */
+        limits: outputs.pages.GetProjectDeploymentConfigsPreviewLimits;
+        /**
+         * mTLS bindings used for Pages Functions.
+         */
+        mtlsCertificates: {[key: string]: outputs.pages.GetProjectDeploymentConfigsPreviewMtlsCertificates};
+        /**
+         * Placement setting used for Pages Functions.
+         */
+        placement: outputs.pages.GetProjectDeploymentConfigsPreviewPlacement;
+        /**
+         * Queue Producer bindings used for Pages Functions.
+         */
+        queueProducers: {[key: string]: outputs.pages.GetProjectDeploymentConfigsPreviewQueueProducers};
+        /**
+         * R2 buckets used for Pages Functions.
+         */
+        r2Buckets: {[key: string]: outputs.pages.GetProjectDeploymentConfigsPreviewR2Buckets};
+        /**
+         * Services used for Pages Functions.
+         */
+        services: {[key: string]: outputs.pages.GetProjectDeploymentConfigsPreviewServices};
+        /**
+         * The usage model for Pages Functions.
+         * Available values: "standard", "bundled", "unbound".
+         *
+         * @deprecated All new projects now use the Standard usage model.
+         */
+        usageModel: string;
+        /**
+         * Vectorize bindings used for Pages Functions.
+         */
+        vectorizeBindings: {[key: string]: outputs.pages.GetProjectDeploymentConfigsPreviewVectorizeBindings};
+        /**
+         * Hash of the Wrangler configuration used for the deployment.
+         */
+        wranglerConfigHash: string;
+    }
+
+    export interface GetProjectDeploymentConfigsPreviewAiBindings {
+        projectId: string;
+    }
+
+    export interface GetProjectDeploymentConfigsPreviewAnalyticsEngineDatasets {
+        /**
+         * Name of the dataset.
+         */
+        dataset: string;
+    }
+
+    export interface GetProjectDeploymentConfigsPreviewBrowsers {
+    }
+
+    export interface GetProjectDeploymentConfigsPreviewD1Databases {
+        /**
+         * UUID of the D1 database.
+         */
+        id: string;
+    }
+
+    export interface GetProjectDeploymentConfigsPreviewDurableObjectNamespaces {
+        /**
+         * ID of the Durable Object namespace.
+         */
+        namespaceId: string;
+    }
+
+    export interface GetProjectDeploymentConfigsPreviewEnvVars {
+        /**
+         * Available values: "plain*text", "secret*text".
+         */
+        type: string;
+        /**
+         * Environment variable value.
+         */
+        value: string;
+    }
+
+    export interface GetProjectDeploymentConfigsPreviewHyperdriveBindings {
+        id: string;
+    }
+
+    export interface GetProjectDeploymentConfigsPreviewKvNamespaces {
+        /**
+         * ID of the KV namespace.
+         */
+        namespaceId: string;
+    }
+
+    export interface GetProjectDeploymentConfigsPreviewLimits {
+        /**
+         * CPU time limit in milliseconds.
+         */
+        cpuMs: number;
+    }
+
+    export interface GetProjectDeploymentConfigsPreviewMtlsCertificates {
+        certificateId: string;
+    }
+
+    export interface GetProjectDeploymentConfigsPreviewPlacement {
+        /**
+         * Placement mode.
+         */
+        mode: string;
+    }
+
+    export interface GetProjectDeploymentConfigsPreviewQueueProducers {
+        /**
+         * Name of the Queue.
+         */
+        name: string;
+    }
+
+    export interface GetProjectDeploymentConfigsPreviewR2Buckets {
+        /**
+         * Jurisdiction of the R2 bucket.
+         */
+        jurisdiction: string;
+        /**
+         * Name of the R2 bucket.
+         */
+        name: string;
+    }
+
+    export interface GetProjectDeploymentConfigsPreviewServices {
+        /**
+         * The entrypoint to bind to.
+         */
+        entrypoint: string;
+        /**
+         * The Service environment.
+         */
+        environment: string;
+        /**
+         * The Service name.
+         */
+        service: string;
+    }
+
+    export interface GetProjectDeploymentConfigsPreviewVectorizeBindings {
+        indexName: string;
+    }
+
+    export interface GetProjectDeploymentConfigsProduction {
+        /**
+         * Constellation bindings used for Pages Functions.
+         */
+        aiBindings: {[key: string]: outputs.pages.GetProjectDeploymentConfigsProductionAiBindings};
+        /**
+         * Whether to always use the latest compatibility date for Pages Functions.
+         */
+        alwaysUseLatestCompatibilityDate: boolean;
+        /**
+         * Analytics Engine bindings used for Pages Functions.
+         */
+        analyticsEngineDatasets: {[key: string]: outputs.pages.GetProjectDeploymentConfigsProductionAnalyticsEngineDatasets};
+        /**
+         * Browser bindings used for Pages Functions.
+         */
+        browsers: {[key: string]: outputs.pages.GetProjectDeploymentConfigsProductionBrowsers};
+        /**
+         * The major version of the build image to use for Pages Functions.
+         */
+        buildImageMajorVersion: number;
+        /**
+         * Compatibility date used for Pages Functions.
+         */
+        compatibilityDate: string;
+        /**
+         * Compatibility flags used for Pages Functions.
+         */
+        compatibilityFlags: string[];
+        /**
+         * D1 databases used for Pages Functions.
+         */
+        d1Databases: {[key: string]: outputs.pages.GetProjectDeploymentConfigsProductionD1Databases};
+        /**
+         * Durable Object namespaces used for Pages Functions.
+         */
+        durableObjectNamespaces: {[key: string]: outputs.pages.GetProjectDeploymentConfigsProductionDurableObjectNamespaces};
+        /**
+         * Environment variables used for builds and Pages Functions.
+         */
+        envVars: {[key: string]: outputs.pages.GetProjectDeploymentConfigsProductionEnvVars};
+        /**
+         * Whether to fail open when the deployment config cannot be applied.
+         */
+        failOpen: boolean;
+        /**
+         * Hyperdrive bindings used for Pages Functions.
+         */
+        hyperdriveBindings: {[key: string]: outputs.pages.GetProjectDeploymentConfigsProductionHyperdriveBindings};
+        /**
+         * KV namespaces used for Pages Functions.
+         */
+        kvNamespaces: {[key: string]: outputs.pages.GetProjectDeploymentConfigsProductionKvNamespaces};
+        /**
+         * Limits for Pages Functions.
+         */
+        limits: outputs.pages.GetProjectDeploymentConfigsProductionLimits;
+        /**
+         * mTLS bindings used for Pages Functions.
+         */
+        mtlsCertificates: {[key: string]: outputs.pages.GetProjectDeploymentConfigsProductionMtlsCertificates};
+        /**
+         * Placement setting used for Pages Functions.
+         */
+        placement: outputs.pages.GetProjectDeploymentConfigsProductionPlacement;
+        /**
+         * Queue Producer bindings used for Pages Functions.
+         */
+        queueProducers: {[key: string]: outputs.pages.GetProjectDeploymentConfigsProductionQueueProducers};
+        /**
+         * R2 buckets used for Pages Functions.
+         */
+        r2Buckets: {[key: string]: outputs.pages.GetProjectDeploymentConfigsProductionR2Buckets};
+        /**
+         * Services used for Pages Functions.
+         */
+        services: {[key: string]: outputs.pages.GetProjectDeploymentConfigsProductionServices};
+        /**
+         * The usage model for Pages Functions.
+         * Available values: "standard", "bundled", "unbound".
+         *
+         * @deprecated All new projects now use the Standard usage model.
+         */
+        usageModel: string;
+        /**
+         * Vectorize bindings used for Pages Functions.
+         */
+        vectorizeBindings: {[key: string]: outputs.pages.GetProjectDeploymentConfigsProductionVectorizeBindings};
+        /**
+         * Hash of the Wrangler configuration used for the deployment.
+         */
+        wranglerConfigHash: string;
+    }
+
+    export interface GetProjectDeploymentConfigsProductionAiBindings {
+        projectId: string;
+    }
+
+    export interface GetProjectDeploymentConfigsProductionAnalyticsEngineDatasets {
+        /**
+         * Name of the dataset.
+         */
+        dataset: string;
+    }
+
+    export interface GetProjectDeploymentConfigsProductionBrowsers {
+    }
+
+    export interface GetProjectDeploymentConfigsProductionD1Databases {
+        /**
+         * UUID of the D1 database.
+         */
+        id: string;
+    }
+
+    export interface GetProjectDeploymentConfigsProductionDurableObjectNamespaces {
+        /**
+         * ID of the Durable Object namespace.
+         */
+        namespaceId: string;
+    }
+
+    export interface GetProjectDeploymentConfigsProductionEnvVars {
+        /**
+         * Available values: "plain*text", "secret*text".
+         */
+        type: string;
+        /**
+         * Environment variable value.
+         */
+        value: string;
+    }
+
+    export interface GetProjectDeploymentConfigsProductionHyperdriveBindings {
+        id: string;
+    }
+
+    export interface GetProjectDeploymentConfigsProductionKvNamespaces {
+        /**
+         * ID of the KV namespace.
+         */
+        namespaceId: string;
+    }
+
+    export interface GetProjectDeploymentConfigsProductionLimits {
+        /**
+         * CPU time limit in milliseconds.
+         */
+        cpuMs: number;
+    }
+
+    export interface GetProjectDeploymentConfigsProductionMtlsCertificates {
+        certificateId: string;
+    }
+
+    export interface GetProjectDeploymentConfigsProductionPlacement {
+        /**
+         * Placement mode.
+         */
+        mode: string;
+    }
+
+    export interface GetProjectDeploymentConfigsProductionQueueProducers {
+        /**
+         * Name of the Queue.
+         */
+        name: string;
+    }
+
+    export interface GetProjectDeploymentConfigsProductionR2Buckets {
+        /**
+         * Jurisdiction of the R2 bucket.
+         */
+        jurisdiction: string;
+        /**
+         * Name of the R2 bucket.
+         */
+        name: string;
+    }
+
+    export interface GetProjectDeploymentConfigsProductionServices {
+        /**
+         * The entrypoint to bind to.
+         */
+        entrypoint: string;
+        /**
+         * The Service environment.
+         */
+        environment: string;
+        /**
+         * The Service name.
+         */
+        service: string;
+    }
+
+    export interface GetProjectDeploymentConfigsProductionVectorizeBindings {
+        indexName: string;
+    }
+
+    export interface GetProjectLatestDeployment {
+        /**
+         * A list of alias URLs pointing to this deployment.
+         */
+        aliases: string[];
+        /**
+         * Configs for the project build process.
+         */
+        buildConfig: outputs.pages.GetProjectLatestDeploymentBuildConfig;
+        /**
+         * When the deployment was created.
+         */
+        createdOn: string;
+        /**
+         * Info about what caused the deployment.
+         */
+        deploymentTrigger: outputs.pages.GetProjectLatestDeploymentDeploymentTrigger;
+        /**
+         * Environment variables used for builds and Pages Functions.
+         */
+        envVars: {[key: string]: outputs.pages.GetProjectLatestDeploymentEnvVars};
+        /**
+         * Type of deploy.
+         * Available values: "preview", "production".
+         */
+        environment: string;
+        /**
+         * Id of the deployment.
+         */
+        id: string;
+        /**
+         * If the deployment has been skipped.
+         */
+        isSkipped: boolean;
+        /**
+         * The status of the deployment.
+         */
+        latestStage: outputs.pages.GetProjectLatestDeploymentLatestStage;
+        /**
+         * When the deployment was last modified.
+         */
+        modifiedOn: string;
+        /**
+         * Id of the project.
+         */
+        projectId: string;
+        /**
+         * Name of the project.
+         */
+        projectName: string;
+        /**
+         * Short Id (8 character) of the deployment.
+         */
+        shortId: string;
+        /**
+         * Configs for the project source control.
+         */
+        source: outputs.pages.GetProjectLatestDeploymentSource;
+        /**
+         * List of past stages.
+         */
+        stages: outputs.pages.GetProjectLatestDeploymentStage[];
+        /**
+         * The live URL to view this deployment.
+         */
+        url: string;
+        /**
+         * Whether the deployment uses functions.
+         */
+        usesFunctions: boolean;
+    }
+
+    export interface GetProjectLatestDeploymentBuildConfig {
+        /**
+         * Enable build caching for the project.
+         */
+        buildCaching: boolean;
+        /**
+         * Command used to build project.
+         */
+        buildCommand: string;
+        /**
+         * Assets output directory of the build.
+         */
+        destinationDir: string;
+        /**
+         * Directory to run the command.
+         */
+        rootDir: string;
+        /**
+         * The classifying tag for analytics.
+         */
+        webAnalyticsTag: string;
+        /**
+         * The auth token for analytics.
+         */
+        webAnalyticsToken: string;
+    }
+
+    export interface GetProjectLatestDeploymentDeploymentTrigger {
+        /**
+         * Additional info about the trigger.
+         */
+        metadata: outputs.pages.GetProjectLatestDeploymentDeploymentTriggerMetadata;
+        /**
+         * What caused the deployment.
+         * Available values: "github:push", "ad*hoc", "deploy*hook".
+         */
+        type: string;
+    }
+
+    export interface GetProjectLatestDeploymentDeploymentTriggerMetadata {
+        /**
+         * Where the trigger happened.
+         */
+        branch: string;
+        /**
+         * Whether the deployment trigger commit was dirty.
+         */
+        commitDirty: boolean;
+        /**
+         * Hash of the deployment trigger commit.
+         */
+        commitHash: string;
+        /**
+         * Message of the deployment trigger commit.
+         */
+        commitMessage: string;
+    }
+
+    export interface GetProjectLatestDeploymentEnvVars {
+        /**
+         * Available values: "plain*text", "secret*text".
+         */
+        type: string;
+        /**
+         * Environment variable value.
+         */
+        value: string;
+    }
+
+    export interface GetProjectLatestDeploymentLatestStage {
+        /**
+         * When the stage ended.
+         */
+        endedOn: string;
+        /**
+         * The current build stage.
+         * Available values: "queued", "initialize", "cloneRepo", "build", "deploy".
+         */
+        name: string;
+        /**
+         * When the stage started.
+         */
+        startedOn: string;
+        /**
+         * State of the current stage.
+         * Available values: "success", "idle", "active", "failure", "canceled".
+         */
+        status: string;
+    }
+
+    export interface GetProjectLatestDeploymentSource {
+        config: outputs.pages.GetProjectLatestDeploymentSourceConfig;
+        /**
+         * The source control management provider.
+         * Available values: "github", "gitlab".
+         */
+        type: string;
+    }
+
+    export interface GetProjectLatestDeploymentSourceConfig {
+        /**
+         * Whether to enable automatic deployments when pushing to the source repository.
+         * When disabled, no deployments (production or preview) will be triggered automatically.
+         *
+         * @deprecated Use `productionDeploymentsEnabled` and `previewDeploymentSetting` for more granular control.
+         */
+        deploymentsEnabled: boolean;
+        /**
+         * The owner of the repository.
+         */
+        owner: string;
+        /**
+         * The owner ID of the repository.
+         */
+        ownerId: string;
+        /**
+         * A list of paths that should be excluded from triggering a preview deployment. Wildcard syntax (`*`) is supported.
+         */
+        pathExcludes: string[];
+        /**
+         * A list of paths that should be watched to trigger a preview deployment. Wildcard syntax (`*`) is supported.
+         */
+        pathIncludes: string[];
+        /**
+         * Whether to enable PR comments.
+         */
+        prCommentsEnabled: boolean;
+        /**
+         * A list of branches that should not trigger a preview deployment. Wildcard syntax (`*`) is supported. Must be used with `previewDeploymentSetting` set to `custom`.
+         */
+        previewBranchExcludes: string[];
+        /**
+         * A list of branches that should trigger a preview deployment. Wildcard syntax (`*`) is supported. Must be used with `previewDeploymentSetting` set to `custom`.
+         */
+        previewBranchIncludes: string[];
+        /**
+         * Controls whether commits to preview branches trigger a preview deployment.
+         * Available values: "all", "none", "custom".
+         */
+        previewDeploymentSetting: string;
+        /**
+         * The production branch of the repository.
+         */
+        productionBranch: string;
+        /**
+         * Whether to trigger a production deployment on commits to the production branch.
+         */
+        productionDeploymentsEnabled: boolean;
+        /**
+         * The ID of the repository.
+         */
+        repoId: string;
+        /**
+         * The name of the repository.
+         */
+        repoName: string;
+    }
+
+    export interface GetProjectLatestDeploymentStage {
+        /**
+         * When the stage ended.
+         */
+        endedOn: string;
+        /**
+         * The current build stage.
+         * Available values: "queued", "initialize", "cloneRepo", "build", "deploy".
+         */
+        name: string;
+        /**
+         * When the stage started.
+         */
+        startedOn: string;
+        /**
+         * State of the current stage.
+         * Available values: "success", "idle", "active", "failure", "canceled".
+         */
+        status: string;
+    }
+
+    export interface GetProjectSource {
+        config: outputs.pages.GetProjectSourceConfig;
+        /**
+         * The source control management provider.
+         * Available values: "github", "gitlab".
+         */
+        type: string;
+    }
+
+    export interface GetProjectSourceConfig {
+        /**
+         * Whether to enable automatic deployments when pushing to the source repository.
+         * When disabled, no deployments (production or preview) will be triggered automatically.
+         *
+         * @deprecated Use `productionDeploymentsEnabled` and `previewDeploymentSetting` for more granular control.
+         */
+        deploymentsEnabled: boolean;
+        /**
+         * The owner of the repository.
+         */
+        owner: string;
+        /**
+         * The owner ID of the repository.
+         */
+        ownerId: string;
+        /**
+         * A list of paths that should be excluded from triggering a preview deployment. Wildcard syntax (`*`) is supported.
+         */
+        pathExcludes: string[];
+        /**
+         * A list of paths that should be watched to trigger a preview deployment. Wildcard syntax (`*`) is supported.
+         */
+        pathIncludes: string[];
+        /**
+         * Whether to enable PR comments.
+         */
+        prCommentsEnabled: boolean;
+        /**
+         * A list of branches that should not trigger a preview deployment. Wildcard syntax (`*`) is supported. Must be used with `previewDeploymentSetting` set to `custom`.
+         */
+        previewBranchExcludes: string[];
+        /**
+         * A list of branches that should trigger a preview deployment. Wildcard syntax (`*`) is supported. Must be used with `previewDeploymentSetting` set to `custom`.
+         */
+        previewBranchIncludes: string[];
+        /**
+         * Controls whether commits to preview branches trigger a preview deployment.
+         * Available values: "all", "none", "custom".
+         */
+        previewDeploymentSetting: string;
+        /**
+         * The production branch of the repository.
+         */
+        productionBranch: string;
+        /**
+         * Whether to trigger a production deployment on commits to the production branch.
+         */
+        productionDeploymentsEnabled: boolean;
+        /**
+         * The ID of the repository.
+         */
+        repoId: string;
+        /**
+         * The name of the repository.
+         */
+        repoName: string;
+    }
+
+    export interface GetProjectsResult {
+        /**
+         * Configs for the project build process.
+         */
+        buildConfig: outputs.pages.GetProjectsResultBuildConfig;
+        /**
+         * Most recent production deployment of the project.
+         */
+        canonicalDeployment: outputs.pages.GetProjectsResultCanonicalDeployment;
+        /**
+         * When the project was created.
+         */
+        createdOn: string;
+        /**
+         * Configs for deployments in a project.
+         */
+        deploymentConfigs: outputs.pages.GetProjectsResultDeploymentConfigs;
+        /**
+         * A list of associated custom domains for the project.
+         */
+        domains: string[];
+        /**
+         * Framework the project is using.
+         */
+        framework: string;
+        /**
+         * Version of the framework the project is using.
+         */
+        frameworkVersion: string;
+        /**
+         * ID of the project.
+         */
+        id: string;
+        /**
+         * Most recent deployment of the project.
+         */
+        latestDeployment: outputs.pages.GetProjectsResultLatestDeployment;
+        /**
+         * Name of the project.
+         */
+        name: string;
+        /**
+         * Name of the preview script.
+         */
+        previewScriptName: string;
+        /**
+         * Production branch of the project. Used to identify production deployments.
+         */
+        productionBranch: string;
+        /**
+         * Name of the production script.
+         */
+        productionScriptName: string;
+        /**
+         * Configs for the project source control.
+         */
+        source: outputs.pages.GetProjectsResultSource;
+        /**
+         * The Cloudflare subdomain associated with the project.
+         */
+        subdomain: string;
+        /**
+         * Whether the project uses functions.
+         */
+        usesFunctions: boolean;
+    }
+
+    export interface GetProjectsResultBuildConfig {
+        /**
+         * Enable build caching for the project.
+         */
+        buildCaching: boolean;
+        /**
+         * Command used to build project.
+         */
+        buildCommand: string;
+        /**
+         * Assets output directory of the build.
+         */
+        destinationDir: string;
+        /**
+         * Directory to run the command.
+         */
+        rootDir: string;
+        /**
+         * The classifying tag for analytics.
+         */
+        webAnalyticsTag: string;
+        /**
+         * The auth token for analytics.
+         */
+        webAnalyticsToken: string;
+    }
+
+    export interface GetProjectsResultCanonicalDeployment {
+        /**
+         * A list of alias URLs pointing to this deployment.
+         */
+        aliases: string[];
+        /**
+         * Configs for the project build process.
+         */
+        buildConfig: outputs.pages.GetProjectsResultCanonicalDeploymentBuildConfig;
+        /**
+         * When the deployment was created.
+         */
+        createdOn: string;
+        /**
+         * Info about what caused the deployment.
+         */
+        deploymentTrigger: outputs.pages.GetProjectsResultCanonicalDeploymentDeploymentTrigger;
+        /**
+         * Environment variables used for builds and Pages Functions.
+         */
+        envVars: {[key: string]: outputs.pages.GetProjectsResultCanonicalDeploymentEnvVars};
+        /**
+         * Type of deploy.
+         * Available values: "preview", "production".
+         */
+        environment: string;
+        /**
+         * Id of the deployment.
+         */
+        id: string;
+        /**
+         * If the deployment has been skipped.
+         */
+        isSkipped: boolean;
+        /**
+         * The status of the deployment.
+         */
+        latestStage: outputs.pages.GetProjectsResultCanonicalDeploymentLatestStage;
+        /**
+         * When the deployment was last modified.
+         */
+        modifiedOn: string;
+        /**
+         * Id of the project.
+         */
+        projectId: string;
+        /**
+         * Name of the project.
+         */
+        projectName: string;
+        /**
+         * Short Id (8 character) of the deployment.
+         */
+        shortId: string;
+        /**
+         * Configs for the project source control.
+         */
+        source: outputs.pages.GetProjectsResultCanonicalDeploymentSource;
+        /**
+         * List of past stages.
+         */
+        stages: outputs.pages.GetProjectsResultCanonicalDeploymentStage[];
+        /**
+         * The live URL to view this deployment.
+         */
+        url: string;
+        /**
+         * Whether the deployment uses functions.
+         */
+        usesFunctions: boolean;
+    }
+
+    export interface GetProjectsResultCanonicalDeploymentBuildConfig {
+        /**
+         * Enable build caching for the project.
+         */
+        buildCaching: boolean;
+        /**
+         * Command used to build project.
+         */
+        buildCommand: string;
+        /**
+         * Assets output directory of the build.
+         */
+        destinationDir: string;
+        /**
+         * Directory to run the command.
+         */
+        rootDir: string;
+        /**
+         * The classifying tag for analytics.
+         */
+        webAnalyticsTag: string;
+        /**
+         * The auth token for analytics.
+         */
+        webAnalyticsToken: string;
+    }
+
+    export interface GetProjectsResultCanonicalDeploymentDeploymentTrigger {
+        /**
+         * Additional info about the trigger.
+         */
+        metadata: outputs.pages.GetProjectsResultCanonicalDeploymentDeploymentTriggerMetadata;
+        /**
+         * What caused the deployment.
+         * Available values: "github:push", "ad*hoc", "deploy*hook".
+         */
+        type: string;
+    }
+
+    export interface GetProjectsResultCanonicalDeploymentDeploymentTriggerMetadata {
+        /**
+         * Where the trigger happened.
+         */
+        branch: string;
+        /**
+         * Whether the deployment trigger commit was dirty.
+         */
+        commitDirty: boolean;
+        /**
+         * Hash of the deployment trigger commit.
+         */
+        commitHash: string;
+        /**
+         * Message of the deployment trigger commit.
+         */
+        commitMessage: string;
+    }
+
+    export interface GetProjectsResultCanonicalDeploymentEnvVars {
+        /**
+         * Available values: "plain*text", "secret*text".
+         */
+        type: string;
+        /**
+         * Environment variable value.
+         */
+        value: string;
+    }
+
+    export interface GetProjectsResultCanonicalDeploymentLatestStage {
+        /**
+         * When the stage ended.
+         */
+        endedOn: string;
+        /**
+         * The current build stage.
+         * Available values: "queued", "initialize", "cloneRepo", "build", "deploy".
+         */
+        name: string;
+        /**
+         * When the stage started.
+         */
+        startedOn: string;
+        /**
+         * State of the current stage.
+         * Available values: "success", "idle", "active", "failure", "canceled".
+         */
+        status: string;
+    }
+
+    export interface GetProjectsResultCanonicalDeploymentSource {
+        config: outputs.pages.GetProjectsResultCanonicalDeploymentSourceConfig;
+        /**
+         * The source control management provider.
+         * Available values: "github", "gitlab".
+         */
+        type: string;
+    }
+
+    export interface GetProjectsResultCanonicalDeploymentSourceConfig {
+        /**
+         * Whether to enable automatic deployments when pushing to the source repository.
+         * When disabled, no deployments (production or preview) will be triggered automatically.
+         *
+         * @deprecated Use `productionDeploymentsEnabled` and `previewDeploymentSetting` for more granular control.
+         */
+        deploymentsEnabled: boolean;
+        /**
+         * The owner of the repository.
+         */
+        owner: string;
+        /**
+         * The owner ID of the repository.
+         */
+        ownerId: string;
+        /**
+         * A list of paths that should be excluded from triggering a preview deployment. Wildcard syntax (`*`) is supported.
+         */
+        pathExcludes: string[];
+        /**
+         * A list of paths that should be watched to trigger a preview deployment. Wildcard syntax (`*`) is supported.
+         */
+        pathIncludes: string[];
+        /**
+         * Whether to enable PR comments.
+         */
+        prCommentsEnabled: boolean;
+        /**
+         * A list of branches that should not trigger a preview deployment. Wildcard syntax (`*`) is supported. Must be used with `previewDeploymentSetting` set to `custom`.
+         */
+        previewBranchExcludes: string[];
+        /**
+         * A list of branches that should trigger a preview deployment. Wildcard syntax (`*`) is supported. Must be used with `previewDeploymentSetting` set to `custom`.
+         */
+        previewBranchIncludes: string[];
+        /**
+         * Controls whether commits to preview branches trigger a preview deployment.
+         * Available values: "all", "none", "custom".
+         */
+        previewDeploymentSetting: string;
+        /**
+         * The production branch of the repository.
+         */
+        productionBranch: string;
+        /**
+         * Whether to trigger a production deployment on commits to the production branch.
+         */
+        productionDeploymentsEnabled: boolean;
+        /**
+         * The ID of the repository.
+         */
+        repoId: string;
+        /**
+         * The name of the repository.
+         */
+        repoName: string;
+    }
+
+    export interface GetProjectsResultCanonicalDeploymentStage {
+        /**
+         * When the stage ended.
+         */
+        endedOn: string;
+        /**
+         * The current build stage.
+         * Available values: "queued", "initialize", "cloneRepo", "build", "deploy".
+         */
+        name: string;
+        /**
+         * When the stage started.
+         */
+        startedOn: string;
+        /**
+         * State of the current stage.
+         * Available values: "success", "idle", "active", "failure", "canceled".
+         */
+        status: string;
+    }
+
+    export interface GetProjectsResultDeploymentConfigs {
+        /**
+         * Configs for preview deploys.
+         */
+        preview: outputs.pages.GetProjectsResultDeploymentConfigsPreview;
+        /**
+         * Configs for production deploys.
+         */
+        production: outputs.pages.GetProjectsResultDeploymentConfigsProduction;
+    }
+
+    export interface GetProjectsResultDeploymentConfigsPreview {
+        /**
+         * Constellation bindings used for Pages Functions.
+         */
+        aiBindings: {[key: string]: outputs.pages.GetProjectsResultDeploymentConfigsPreviewAiBindings};
+        /**
+         * Whether to always use the latest compatibility date for Pages Functions.
+         */
+        alwaysUseLatestCompatibilityDate: boolean;
+        /**
+         * Analytics Engine bindings used for Pages Functions.
+         */
+        analyticsEngineDatasets: {[key: string]: outputs.pages.GetProjectsResultDeploymentConfigsPreviewAnalyticsEngineDatasets};
+        /**
+         * Browser bindings used for Pages Functions.
+         */
+        browsers: {[key: string]: outputs.pages.GetProjectsResultDeploymentConfigsPreviewBrowsers};
+        /**
+         * The major version of the build image to use for Pages Functions.
+         */
+        buildImageMajorVersion: number;
+        /**
+         * Compatibility date used for Pages Functions.
+         */
+        compatibilityDate: string;
+        /**
+         * Compatibility flags used for Pages Functions.
+         */
+        compatibilityFlags: string[];
+        /**
+         * D1 databases used for Pages Functions.
+         */
+        d1Databases: {[key: string]: outputs.pages.GetProjectsResultDeploymentConfigsPreviewD1Databases};
+        /**
+         * Durable Object namespaces used for Pages Functions.
+         */
+        durableObjectNamespaces: {[key: string]: outputs.pages.GetProjectsResultDeploymentConfigsPreviewDurableObjectNamespaces};
+        /**
+         * Environment variables used for builds and Pages Functions.
+         */
+        envVars: {[key: string]: outputs.pages.GetProjectsResultDeploymentConfigsPreviewEnvVars};
+        /**
+         * Whether to fail open when the deployment config cannot be applied.
+         */
+        failOpen: boolean;
+        /**
+         * Hyperdrive bindings used for Pages Functions.
+         */
+        hyperdriveBindings: {[key: string]: outputs.pages.GetProjectsResultDeploymentConfigsPreviewHyperdriveBindings};
+        /**
+         * KV namespaces used for Pages Functions.
+         */
+        kvNamespaces: {[key: string]: outputs.pages.GetProjectsResultDeploymentConfigsPreviewKvNamespaces};
+        /**
+         * Limits for Pages Functions.
+         */
+        limits: outputs.pages.GetProjectsResultDeploymentConfigsPreviewLimits;
+        /**
+         * mTLS bindings used for Pages Functions.
+         */
+        mtlsCertificates: {[key: string]: outputs.pages.GetProjectsResultDeploymentConfigsPreviewMtlsCertificates};
+        /**
+         * Placement setting used for Pages Functions.
+         */
+        placement: outputs.pages.GetProjectsResultDeploymentConfigsPreviewPlacement;
+        /**
+         * Queue Producer bindings used for Pages Functions.
+         */
+        queueProducers: {[key: string]: outputs.pages.GetProjectsResultDeploymentConfigsPreviewQueueProducers};
+        /**
+         * R2 buckets used for Pages Functions.
+         */
+        r2Buckets: {[key: string]: outputs.pages.GetProjectsResultDeploymentConfigsPreviewR2Buckets};
+        /**
+         * Services used for Pages Functions.
+         */
+        services: {[key: string]: outputs.pages.GetProjectsResultDeploymentConfigsPreviewServices};
+        /**
+         * The usage model for Pages Functions.
+         * Available values: "standard", "bundled", "unbound".
+         *
+         * @deprecated All new projects now use the Standard usage model.
+         */
+        usageModel: string;
+        /**
+         * Vectorize bindings used for Pages Functions.
+         */
+        vectorizeBindings: {[key: string]: outputs.pages.GetProjectsResultDeploymentConfigsPreviewVectorizeBindings};
+        /**
+         * Hash of the Wrangler configuration used for the deployment.
+         */
+        wranglerConfigHash: string;
+    }
+
+    export interface GetProjectsResultDeploymentConfigsPreviewAiBindings {
+        projectId: string;
+    }
+
+    export interface GetProjectsResultDeploymentConfigsPreviewAnalyticsEngineDatasets {
+        /**
+         * Name of the dataset.
+         */
+        dataset: string;
+    }
+
+    export interface GetProjectsResultDeploymentConfigsPreviewBrowsers {
+    }
+
+    export interface GetProjectsResultDeploymentConfigsPreviewD1Databases {
+        /**
+         * UUID of the D1 database.
+         */
+        id: string;
+    }
+
+    export interface GetProjectsResultDeploymentConfigsPreviewDurableObjectNamespaces {
+        /**
+         * ID of the Durable Object namespace.
+         */
+        namespaceId: string;
+    }
+
+    export interface GetProjectsResultDeploymentConfigsPreviewEnvVars {
+        /**
+         * Available values: "plain*text", "secret*text".
+         */
+        type: string;
+        /**
+         * Environment variable value.
+         */
+        value: string;
+    }
+
+    export interface GetProjectsResultDeploymentConfigsPreviewHyperdriveBindings {
+        id: string;
+    }
+
+    export interface GetProjectsResultDeploymentConfigsPreviewKvNamespaces {
+        /**
+         * ID of the KV namespace.
+         */
+        namespaceId: string;
+    }
+
+    export interface GetProjectsResultDeploymentConfigsPreviewLimits {
+        /**
+         * CPU time limit in milliseconds.
+         */
+        cpuMs: number;
+    }
+
+    export interface GetProjectsResultDeploymentConfigsPreviewMtlsCertificates {
+        certificateId: string;
+    }
+
+    export interface GetProjectsResultDeploymentConfigsPreviewPlacement {
+        /**
+         * Placement mode.
+         */
+        mode: string;
+    }
+
+    export interface GetProjectsResultDeploymentConfigsPreviewQueueProducers {
+        /**
+         * Name of the Queue.
+         */
+        name: string;
+    }
+
+    export interface GetProjectsResultDeploymentConfigsPreviewR2Buckets {
+        /**
+         * Jurisdiction of the R2 bucket.
+         */
+        jurisdiction: string;
+        /**
+         * Name of the R2 bucket.
+         */
+        name: string;
+    }
+
+    export interface GetProjectsResultDeploymentConfigsPreviewServices {
+        /**
+         * The entrypoint to bind to.
+         */
+        entrypoint: string;
+        /**
+         * The Service environment.
+         */
+        environment: string;
+        /**
+         * The Service name.
+         */
+        service: string;
+    }
+
+    export interface GetProjectsResultDeploymentConfigsPreviewVectorizeBindings {
+        indexName: string;
+    }
+
+    export interface GetProjectsResultDeploymentConfigsProduction {
+        /**
+         * Constellation bindings used for Pages Functions.
+         */
+        aiBindings: {[key: string]: outputs.pages.GetProjectsResultDeploymentConfigsProductionAiBindings};
+        /**
+         * Whether to always use the latest compatibility date for Pages Functions.
+         */
+        alwaysUseLatestCompatibilityDate: boolean;
+        /**
+         * Analytics Engine bindings used for Pages Functions.
+         */
+        analyticsEngineDatasets: {[key: string]: outputs.pages.GetProjectsResultDeploymentConfigsProductionAnalyticsEngineDatasets};
+        /**
+         * Browser bindings used for Pages Functions.
+         */
+        browsers: {[key: string]: outputs.pages.GetProjectsResultDeploymentConfigsProductionBrowsers};
+        /**
+         * The major version of the build image to use for Pages Functions.
+         */
+        buildImageMajorVersion: number;
+        /**
+         * Compatibility date used for Pages Functions.
+         */
+        compatibilityDate: string;
+        /**
+         * Compatibility flags used for Pages Functions.
+         */
+        compatibilityFlags: string[];
+        /**
+         * D1 databases used for Pages Functions.
+         */
+        d1Databases: {[key: string]: outputs.pages.GetProjectsResultDeploymentConfigsProductionD1Databases};
+        /**
+         * Durable Object namespaces used for Pages Functions.
+         */
+        durableObjectNamespaces: {[key: string]: outputs.pages.GetProjectsResultDeploymentConfigsProductionDurableObjectNamespaces};
+        /**
+         * Environment variables used for builds and Pages Functions.
+         */
+        envVars: {[key: string]: outputs.pages.GetProjectsResultDeploymentConfigsProductionEnvVars};
+        /**
+         * Whether to fail open when the deployment config cannot be applied.
+         */
+        failOpen: boolean;
+        /**
+         * Hyperdrive bindings used for Pages Functions.
+         */
+        hyperdriveBindings: {[key: string]: outputs.pages.GetProjectsResultDeploymentConfigsProductionHyperdriveBindings};
+        /**
+         * KV namespaces used for Pages Functions.
+         */
+        kvNamespaces: {[key: string]: outputs.pages.GetProjectsResultDeploymentConfigsProductionKvNamespaces};
+        /**
+         * Limits for Pages Functions.
+         */
+        limits: outputs.pages.GetProjectsResultDeploymentConfigsProductionLimits;
+        /**
+         * mTLS bindings used for Pages Functions.
+         */
+        mtlsCertificates: {[key: string]: outputs.pages.GetProjectsResultDeploymentConfigsProductionMtlsCertificates};
+        /**
+         * Placement setting used for Pages Functions.
+         */
+        placement: outputs.pages.GetProjectsResultDeploymentConfigsProductionPlacement;
+        /**
+         * Queue Producer bindings used for Pages Functions.
+         */
+        queueProducers: {[key: string]: outputs.pages.GetProjectsResultDeploymentConfigsProductionQueueProducers};
+        /**
+         * R2 buckets used for Pages Functions.
+         */
+        r2Buckets: {[key: string]: outputs.pages.GetProjectsResultDeploymentConfigsProductionR2Buckets};
+        /**
+         * Services used for Pages Functions.
+         */
+        services: {[key: string]: outputs.pages.GetProjectsResultDeploymentConfigsProductionServices};
+        /**
+         * The usage model for Pages Functions.
+         * Available values: "standard", "bundled", "unbound".
+         *
+         * @deprecated All new projects now use the Standard usage model.
+         */
+        usageModel: string;
+        /**
+         * Vectorize bindings used for Pages Functions.
+         */
+        vectorizeBindings: {[key: string]: outputs.pages.GetProjectsResultDeploymentConfigsProductionVectorizeBindings};
+        /**
+         * Hash of the Wrangler configuration used for the deployment.
+         */
+        wranglerConfigHash: string;
+    }
+
+    export interface GetProjectsResultDeploymentConfigsProductionAiBindings {
+        projectId: string;
+    }
+
+    export interface GetProjectsResultDeploymentConfigsProductionAnalyticsEngineDatasets {
+        /**
+         * Name of the dataset.
+         */
+        dataset: string;
+    }
+
+    export interface GetProjectsResultDeploymentConfigsProductionBrowsers {
+    }
+
+    export interface GetProjectsResultDeploymentConfigsProductionD1Databases {
+        /**
+         * UUID of the D1 database.
+         */
+        id: string;
+    }
+
+    export interface GetProjectsResultDeploymentConfigsProductionDurableObjectNamespaces {
+        /**
+         * ID of the Durable Object namespace.
+         */
+        namespaceId: string;
+    }
+
+    export interface GetProjectsResultDeploymentConfigsProductionEnvVars {
+        /**
+         * Available values: "plain*text", "secret*text".
+         */
+        type: string;
+        /**
+         * Environment variable value.
+         */
+        value: string;
+    }
+
+    export interface GetProjectsResultDeploymentConfigsProductionHyperdriveBindings {
+        id: string;
+    }
+
+    export interface GetProjectsResultDeploymentConfigsProductionKvNamespaces {
+        /**
+         * ID of the KV namespace.
+         */
+        namespaceId: string;
+    }
+
+    export interface GetProjectsResultDeploymentConfigsProductionLimits {
+        /**
+         * CPU time limit in milliseconds.
+         */
+        cpuMs: number;
+    }
+
+    export interface GetProjectsResultDeploymentConfigsProductionMtlsCertificates {
+        certificateId: string;
+    }
+
+    export interface GetProjectsResultDeploymentConfigsProductionPlacement {
+        /**
+         * Placement mode.
+         */
+        mode: string;
+    }
+
+    export interface GetProjectsResultDeploymentConfigsProductionQueueProducers {
+        /**
+         * Name of the Queue.
+         */
+        name: string;
+    }
+
+    export interface GetProjectsResultDeploymentConfigsProductionR2Buckets {
+        /**
+         * Jurisdiction of the R2 bucket.
+         */
+        jurisdiction: string;
+        /**
+         * Name of the R2 bucket.
+         */
+        name: string;
+    }
+
+    export interface GetProjectsResultDeploymentConfigsProductionServices {
+        /**
+         * The entrypoint to bind to.
+         */
+        entrypoint: string;
+        /**
+         * The Service environment.
+         */
+        environment: string;
+        /**
+         * The Service name.
+         */
+        service: string;
+    }
+
+    export interface GetProjectsResultDeploymentConfigsProductionVectorizeBindings {
+        indexName: string;
+    }
+
+    export interface GetProjectsResultLatestDeployment {
+        /**
+         * A list of alias URLs pointing to this deployment.
+         */
+        aliases: string[];
+        /**
+         * Configs for the project build process.
+         */
+        buildConfig: outputs.pages.GetProjectsResultLatestDeploymentBuildConfig;
+        /**
+         * When the deployment was created.
+         */
+        createdOn: string;
+        /**
+         * Info about what caused the deployment.
+         */
+        deploymentTrigger: outputs.pages.GetProjectsResultLatestDeploymentDeploymentTrigger;
+        /**
+         * Environment variables used for builds and Pages Functions.
+         */
+        envVars: {[key: string]: outputs.pages.GetProjectsResultLatestDeploymentEnvVars};
+        /**
+         * Type of deploy.
+         * Available values: "preview", "production".
+         */
+        environment: string;
+        /**
+         * Id of the deployment.
+         */
+        id: string;
+        /**
+         * If the deployment has been skipped.
+         */
+        isSkipped: boolean;
+        /**
+         * The status of the deployment.
+         */
+        latestStage: outputs.pages.GetProjectsResultLatestDeploymentLatestStage;
+        /**
+         * When the deployment was last modified.
+         */
+        modifiedOn: string;
+        /**
+         * Id of the project.
+         */
+        projectId: string;
+        /**
+         * Name of the project.
+         */
+        projectName: string;
+        /**
+         * Short Id (8 character) of the deployment.
+         */
+        shortId: string;
+        /**
+         * Configs for the project source control.
+         */
+        source: outputs.pages.GetProjectsResultLatestDeploymentSource;
+        /**
+         * List of past stages.
+         */
+        stages: outputs.pages.GetProjectsResultLatestDeploymentStage[];
+        /**
+         * The live URL to view this deployment.
+         */
+        url: string;
+        /**
+         * Whether the deployment uses functions.
+         */
+        usesFunctions: boolean;
+    }
+
+    export interface GetProjectsResultLatestDeploymentBuildConfig {
+        /**
+         * Enable build caching for the project.
+         */
+        buildCaching: boolean;
+        /**
+         * Command used to build project.
+         */
+        buildCommand: string;
+        /**
+         * Assets output directory of the build.
+         */
+        destinationDir: string;
+        /**
+         * Directory to run the command.
+         */
+        rootDir: string;
+        /**
+         * The classifying tag for analytics.
+         */
+        webAnalyticsTag: string;
+        /**
+         * The auth token for analytics.
+         */
+        webAnalyticsToken: string;
+    }
+
+    export interface GetProjectsResultLatestDeploymentDeploymentTrigger {
+        /**
+         * Additional info about the trigger.
+         */
+        metadata: outputs.pages.GetProjectsResultLatestDeploymentDeploymentTriggerMetadata;
+        /**
+         * What caused the deployment.
+         * Available values: "github:push", "ad*hoc", "deploy*hook".
+         */
+        type: string;
+    }
+
+    export interface GetProjectsResultLatestDeploymentDeploymentTriggerMetadata {
+        /**
+         * Where the trigger happened.
+         */
+        branch: string;
+        /**
+         * Whether the deployment trigger commit was dirty.
+         */
+        commitDirty: boolean;
+        /**
+         * Hash of the deployment trigger commit.
+         */
+        commitHash: string;
+        /**
+         * Message of the deployment trigger commit.
+         */
+        commitMessage: string;
+    }
+
+    export interface GetProjectsResultLatestDeploymentEnvVars {
+        /**
+         * Available values: "plain*text", "secret*text".
+         */
+        type: string;
+        /**
+         * Environment variable value.
+         */
+        value: string;
+    }
+
+    export interface GetProjectsResultLatestDeploymentLatestStage {
+        /**
+         * When the stage ended.
+         */
+        endedOn: string;
+        /**
+         * The current build stage.
+         * Available values: "queued", "initialize", "cloneRepo", "build", "deploy".
+         */
+        name: string;
+        /**
+         * When the stage started.
+         */
+        startedOn: string;
+        /**
+         * State of the current stage.
+         * Available values: "success", "idle", "active", "failure", "canceled".
+         */
+        status: string;
+    }
+
+    export interface GetProjectsResultLatestDeploymentSource {
+        config: outputs.pages.GetProjectsResultLatestDeploymentSourceConfig;
+        /**
+         * The source control management provider.
+         * Available values: "github", "gitlab".
+         */
+        type: string;
+    }
+
+    export interface GetProjectsResultLatestDeploymentSourceConfig {
+        /**
+         * Whether to enable automatic deployments when pushing to the source repository.
+         * When disabled, no deployments (production or preview) will be triggered automatically.
+         *
+         * @deprecated Use `productionDeploymentsEnabled` and `previewDeploymentSetting` for more granular control.
+         */
+        deploymentsEnabled: boolean;
+        /**
+         * The owner of the repository.
+         */
+        owner: string;
+        /**
+         * The owner ID of the repository.
+         */
+        ownerId: string;
+        /**
+         * A list of paths that should be excluded from triggering a preview deployment. Wildcard syntax (`*`) is supported.
+         */
+        pathExcludes: string[];
+        /**
+         * A list of paths that should be watched to trigger a preview deployment. Wildcard syntax (`*`) is supported.
+         */
+        pathIncludes: string[];
+        /**
+         * Whether to enable PR comments.
+         */
+        prCommentsEnabled: boolean;
+        /**
+         * A list of branches that should not trigger a preview deployment. Wildcard syntax (`*`) is supported. Must be used with `previewDeploymentSetting` set to `custom`.
+         */
+        previewBranchExcludes: string[];
+        /**
+         * A list of branches that should trigger a preview deployment. Wildcard syntax (`*`) is supported. Must be used with `previewDeploymentSetting` set to `custom`.
+         */
+        previewBranchIncludes: string[];
+        /**
+         * Controls whether commits to preview branches trigger a preview deployment.
+         * Available values: "all", "none", "custom".
+         */
+        previewDeploymentSetting: string;
+        /**
+         * The production branch of the repository.
+         */
+        productionBranch: string;
+        /**
+         * Whether to trigger a production deployment on commits to the production branch.
+         */
+        productionDeploymentsEnabled: boolean;
+        /**
+         * The ID of the repository.
+         */
+        repoId: string;
+        /**
+         * The name of the repository.
+         */
+        repoName: string;
+    }
+
+    export interface GetProjectsResultLatestDeploymentStage {
+        /**
+         * When the stage ended.
+         */
+        endedOn: string;
+        /**
+         * The current build stage.
+         * Available values: "queued", "initialize", "cloneRepo", "build", "deploy".
+         */
+        name: string;
+        /**
+         * When the stage started.
+         */
+        startedOn: string;
+        /**
+         * State of the current stage.
+         * Available values: "success", "idle", "active", "failure", "canceled".
+         */
+        status: string;
+    }
+
+    export interface GetProjectsResultSource {
+        config: outputs.pages.GetProjectsResultSourceConfig;
+        /**
+         * The source control management provider.
+         * Available values: "github", "gitlab".
+         */
+        type: string;
+    }
+
+    export interface GetProjectsResultSourceConfig {
+        /**
+         * Whether to enable automatic deployments when pushing to the source repository.
+         * When disabled, no deployments (production or preview) will be triggered automatically.
+         *
+         * @deprecated Use `productionDeploymentsEnabled` and `previewDeploymentSetting` for more granular control.
+         */
+        deploymentsEnabled: boolean;
+        /**
+         * The owner of the repository.
+         */
+        owner: string;
+        /**
+         * The owner ID of the repository.
+         */
+        ownerId: string;
+        /**
+         * A list of paths that should be excluded from triggering a preview deployment. Wildcard syntax (`*`) is supported.
+         */
+        pathExcludes: string[];
+        /**
+         * A list of paths that should be watched to trigger a preview deployment. Wildcard syntax (`*`) is supported.
+         */
+        pathIncludes: string[];
+        /**
+         * Whether to enable PR comments.
+         */
+        prCommentsEnabled: boolean;
+        /**
+         * A list of branches that should not trigger a preview deployment. Wildcard syntax (`*`) is supported. Must be used with `previewDeploymentSetting` set to `custom`.
+         */
+        previewBranchExcludes: string[];
+        /**
+         * A list of branches that should trigger a preview deployment. Wildcard syntax (`*`) is supported. Must be used with `previewDeploymentSetting` set to `custom`.
+         */
+        previewBranchIncludes: string[];
+        /**
+         * Controls whether commits to preview branches trigger a preview deployment.
+         * Available values: "all", "none", "custom".
+         */
+        previewDeploymentSetting: string;
+        /**
+         * The production branch of the repository.
+         */
+        productionBranch: string;
+        /**
+         * Whether to trigger a production deployment on commits to the production branch.
+         */
+        productionDeploymentsEnabled: boolean;
+        /**
+         * The ID of the repository.
+         */
+        repoId: string;
+        /**
+         * The name of the repository.
+         */
+        repoName: string;
+    }
+
+    export interface ProjectBuildConfig {
+        /**
+         * Enable build caching for the project.
+         */
+        buildCaching: boolean;
+        /**
+         * Command used to build project.
+         */
+        buildCommand: string;
+        /**
+         * Output directory of the build.
+         */
+        destinationDir: string;
+        /**
+         * Directory to run the command.
+         */
+        rootDir: string;
+        /**
+         * The classifying tag for analytics.
+         */
+        webAnalyticsTag: string;
+        /**
+         * The auth token for analytics.
+         */
+        webAnalyticsToken: string;
+    }
+
+    export interface ProjectCanonicalDeployment {
+        /**
+         * A list of alias URLs pointing to this deployment.
+         */
+        aliases: string[];
+        /**
+         * Configs for the project build process.
+         */
+        buildConfig: outputs.pages.ProjectCanonicalDeploymentBuildConfig;
+        /**
+         * When the deployment was created.
+         */
+        createdOn: string;
+        /**
+         * Info about what caused the deployment.
+         */
+        deploymentTrigger: outputs.pages.ProjectCanonicalDeploymentDeploymentTrigger;
+        /**
+         * Environment variables used for builds and Pages Functions.
+         */
+        envVars: {[key: string]: outputs.pages.ProjectCanonicalDeploymentEnvVars};
+        /**
+         * Type of deploy.
+         * Available values: "preview", "production".
+         */
+        environment: string;
+        /**
+         * Id of the deployment.
+         */
+        id: string;
+        /**
+         * If the deployment has been skipped.
+         */
+        isSkipped: boolean;
+        /**
+         * The status of the deployment.
+         */
+        latestStage: outputs.pages.ProjectCanonicalDeploymentLatestStage;
+        /**
+         * When the deployment was last modified.
+         */
+        modifiedOn: string;
+        /**
+         * Id of the project.
+         */
+        projectId: string;
+        /**
+         * Name of the project.
+         */
+        projectName: string;
+        /**
+         * Short Id (8 character) of the deployment.
+         */
+        shortId: string;
+        /**
+         * Configs for the project source control.
+         */
+        source: outputs.pages.ProjectCanonicalDeploymentSource;
+        /**
+         * List of past stages.
+         */
+        stages: outputs.pages.ProjectCanonicalDeploymentStage[];
+        /**
+         * The live URL to view this deployment.
+         */
+        url: string;
+        /**
+         * Whether the deployment uses functions.
+         */
+        usesFunctions: boolean;
+    }
+
+    export interface ProjectCanonicalDeploymentBuildConfig {
+        /**
+         * Enable build caching for the project.
+         */
+        buildCaching: boolean;
+        /**
+         * Command used to build project.
+         */
+        buildCommand: string;
+        /**
+         * Assets output directory of the build.
+         */
+        destinationDir: string;
+        /**
+         * Directory to run the command.
+         */
+        rootDir: string;
+        /**
+         * The classifying tag for analytics.
+         */
+        webAnalyticsTag: string;
+        /**
+         * The auth token for analytics.
+         */
+        webAnalyticsToken: string;
+    }
+
+    export interface ProjectCanonicalDeploymentDeploymentTrigger {
+        /**
+         * Additional info about the trigger.
+         */
+        metadata: outputs.pages.ProjectCanonicalDeploymentDeploymentTriggerMetadata;
+        /**
+         * What caused the deployment.
+         * Available values: "github:push", "ad*hoc", "deploy*hook".
+         */
+        type: string;
+    }
+
+    export interface ProjectCanonicalDeploymentDeploymentTriggerMetadata {
+        /**
+         * Where the trigger happened.
+         */
+        branch: string;
+        /**
+         * Whether the deployment trigger commit was dirty.
+         */
+        commitDirty: boolean;
+        /**
+         * Hash of the deployment trigger commit.
+         */
+        commitHash: string;
+        /**
+         * Message of the deployment trigger commit.
+         */
+        commitMessage: string;
+    }
+
+    export interface ProjectCanonicalDeploymentEnvVars {
+        /**
+         * Available values: "plain*text", "secret*text".
+         */
+        type: string;
+        /**
+         * Environment variable value.
+         */
+        value: string;
+    }
+
+    export interface ProjectCanonicalDeploymentLatestStage {
+        /**
+         * When the stage ended.
+         */
+        endedOn: string;
+        /**
+         * The current build stage.
+         * Available values: "queued", "initialize", "cloneRepo", "build", "deploy".
+         */
+        name: string;
+        /**
+         * When the stage started.
+         */
+        startedOn: string;
+        /**
+         * State of the current stage.
+         * Available values: "success", "idle", "active", "failure", "canceled".
+         */
+        status: string;
+    }
+
+    export interface ProjectCanonicalDeploymentSource {
+        config: outputs.pages.ProjectCanonicalDeploymentSourceConfig;
+        /**
+         * The source control management provider.
+         * Available values: "github", "gitlab".
+         */
+        type: string;
+    }
+
+    export interface ProjectCanonicalDeploymentSourceConfig {
+        /**
+         * Whether to enable automatic deployments when pushing to the source repository.
+         * When disabled, no deployments (production or preview) will be triggered automatically.
+         *
+         * @deprecated Use `productionDeploymentsEnabled` and `previewDeploymentSetting` for more granular control.
+         */
+        deploymentsEnabled: boolean;
+        /**
+         * The owner of the repository.
+         */
+        owner: string;
+        /**
+         * The owner ID of the repository.
+         */
+        ownerId: string;
+        /**
+         * A list of paths that should be excluded from triggering a preview deployment. Wildcard syntax (`*`) is supported.
+         */
+        pathExcludes: string[];
+        /**
+         * A list of paths that should be watched to trigger a preview deployment. Wildcard syntax (`*`) is supported.
+         */
+        pathIncludes: string[];
+        /**
+         * Whether to enable PR comments.
+         */
+        prCommentsEnabled: boolean;
+        /**
+         * A list of branches that should not trigger a preview deployment. Wildcard syntax (`*`) is supported. Must be used with `previewDeploymentSetting` set to `custom`.
+         */
+        previewBranchExcludes: string[];
+        /**
+         * A list of branches that should trigger a preview deployment. Wildcard syntax (`*`) is supported. Must be used with `previewDeploymentSetting` set to `custom`.
+         */
+        previewBranchIncludes: string[];
+        /**
+         * Controls whether commits to preview branches trigger a preview deployment.
+         * Available values: "all", "none", "custom".
+         */
+        previewDeploymentSetting: string;
+        /**
+         * The production branch of the repository.
+         */
+        productionBranch: string;
+        /**
+         * Whether to trigger a production deployment on commits to the production branch.
+         */
+        productionDeploymentsEnabled: boolean;
+        /**
+         * The ID of the repository.
+         */
+        repoId: string;
+        /**
+         * The name of the repository.
+         */
+        repoName: string;
+    }
+
+    export interface ProjectCanonicalDeploymentStage {
+        /**
+         * When the stage ended.
+         */
+        endedOn: string;
+        /**
+         * The current build stage.
+         * Available values: "queued", "initialize", "cloneRepo", "build", "deploy".
+         */
+        name: string;
+        /**
+         * When the stage started.
+         */
+        startedOn: string;
+        /**
+         * State of the current stage.
+         * Available values: "success", "idle", "active", "failure", "canceled".
+         */
+        status: string;
+    }
+
+    export interface ProjectDeploymentConfigs {
+        /**
+         * Configs for preview deploys.
+         */
+        preview: outputs.pages.ProjectDeploymentConfigsPreview;
+        /**
+         * Configs for production deploys.
+         */
+        production: outputs.pages.ProjectDeploymentConfigsProduction;
+    }
+
+    export interface ProjectDeploymentConfigsPreview {
+        /**
+         * Constellation bindings used for Pages Functions.
+         */
+        aiBindings?: {[key: string]: outputs.pages.ProjectDeploymentConfigsPreviewAiBindings};
+        /**
+         * Whether to always use the latest compatibility date for Pages Functions.
+         */
+        alwaysUseLatestCompatibilityDate: boolean;
+        /**
+         * Analytics Engine bindings used for Pages Functions.
+         */
+        analyticsEngineDatasets?: {[key: string]: outputs.pages.ProjectDeploymentConfigsPreviewAnalyticsEngineDatasets};
+        /**
+         * Browser bindings used for Pages Functions.
+         */
+        browsers?: {[key: string]: outputs.pages.ProjectDeploymentConfigsPreviewBrowsers};
+        /**
+         * The major version of the build image to use for Pages Functions.
+         */
+        buildImageMajorVersion: number;
+        /**
+         * Compatibility date used for Pages Functions.
+         */
+        compatibilityDate: string;
+        /**
+         * Compatibility flags used for Pages Functions.
+         */
+        compatibilityFlags?: string[];
+        /**
+         * D1 databases used for Pages Functions.
+         */
+        d1Databases?: {[key: string]: outputs.pages.ProjectDeploymentConfigsPreviewD1Databases};
+        /**
+         * Durable Object namespaces used for Pages Functions.
+         */
+        durableObjectNamespaces?: {[key: string]: outputs.pages.ProjectDeploymentConfigsPreviewDurableObjectNamespaces};
+        /**
+         * Environment variables used for builds and Pages Functions.
+         */
+        envVars?: {[key: string]: outputs.pages.ProjectDeploymentConfigsPreviewEnvVars};
+        /**
+         * Whether to fail open when the deployment config cannot be applied.
+         */
+        failOpen: boolean;
+        /**
+         * Hyperdrive bindings used for Pages Functions.
+         */
+        hyperdriveBindings?: {[key: string]: outputs.pages.ProjectDeploymentConfigsPreviewHyperdriveBindings};
+        /**
+         * KV namespaces used for Pages Functions.
+         */
+        kvNamespaces?: {[key: string]: outputs.pages.ProjectDeploymentConfigsPreviewKvNamespaces};
+        /**
+         * Limits for Pages Functions.
+         */
+        limits?: outputs.pages.ProjectDeploymentConfigsPreviewLimits;
+        /**
+         * mTLS bindings used for Pages Functions.
+         */
+        mtlsCertificates?: {[key: string]: outputs.pages.ProjectDeploymentConfigsPreviewMtlsCertificates};
+        /**
+         * Placement setting used for Pages Functions.
+         */
+        placement?: outputs.pages.ProjectDeploymentConfigsPreviewPlacement;
+        /**
+         * Queue Producer bindings used for Pages Functions.
+         */
+        queueProducers?: {[key: string]: outputs.pages.ProjectDeploymentConfigsPreviewQueueProducers};
+        /**
+         * R2 buckets used for Pages Functions.
+         */
+        r2Buckets?: {[key: string]: outputs.pages.ProjectDeploymentConfigsPreviewR2Buckets};
+        /**
+         * Services used for Pages Functions.
+         */
+        services?: {[key: string]: outputs.pages.ProjectDeploymentConfigsPreviewServices};
+        /**
+         * The usage model for Pages Functions.
+         * Available values: "standard", "bundled", "unbound".
+         *
+         * @deprecated All new projects now use the Standard usage model.
+         */
+        usageModel: string;
+        /**
+         * Vectorize bindings used for Pages Functions.
+         */
+        vectorizeBindings?: {[key: string]: outputs.pages.ProjectDeploymentConfigsPreviewVectorizeBindings};
+        /**
+         * Hash of the Wrangler configuration used for the deployment.
+         */
+        wranglerConfigHash?: string;
+    }
+
+    export interface ProjectDeploymentConfigsPreviewAiBindings {
+        projectId: string;
+    }
+
+    export interface ProjectDeploymentConfigsPreviewAnalyticsEngineDatasets {
+        /**
+         * Name of the dataset.
+         */
+        dataset: string;
+    }
+
+    export interface ProjectDeploymentConfigsPreviewBrowsers {
+    }
+
+    export interface ProjectDeploymentConfigsPreviewD1Databases {
+        /**
+         * UUID of the D1 database.
+         */
+        id: string;
+    }
+
+    export interface ProjectDeploymentConfigsPreviewDurableObjectNamespaces {
+        /**
+         * ID of the Durable Object namespace.
+         */
+        namespaceId: string;
+    }
+
+    export interface ProjectDeploymentConfigsPreviewEnvVars {
+        /**
+         * Available values: "plain*text", "secret*text".
+         */
+        type: string;
+        /**
+         * Environment variable value.
+         */
+        value: string;
+    }
+
+    export interface ProjectDeploymentConfigsPreviewHyperdriveBindings {
+        id: string;
+    }
+
+    export interface ProjectDeploymentConfigsPreviewKvNamespaces {
+        /**
+         * ID of the KV namespace.
+         */
+        namespaceId: string;
+    }
+
+    export interface ProjectDeploymentConfigsPreviewLimits {
+        /**
+         * CPU time limit in milliseconds.
+         */
+        cpuMs: number;
+    }
+
+    export interface ProjectDeploymentConfigsPreviewMtlsCertificates {
+        certificateId: string;
+    }
+
+    export interface ProjectDeploymentConfigsPreviewPlacement {
+        /**
+         * Placement mode.
+         */
+        mode?: string;
+    }
+
+    export interface ProjectDeploymentConfigsPreviewQueueProducers {
+        /**
+         * Name of the Queue.
+         */
+        name: string;
+    }
+
+    export interface ProjectDeploymentConfigsPreviewR2Buckets {
+        /**
+         * Jurisdiction of the R2 bucket.
+         */
+        jurisdiction?: string;
+        /**
+         * Name of the R2 bucket.
+         */
+        name: string;
+    }
+
+    export interface ProjectDeploymentConfigsPreviewServices {
+        /**
+         * The entrypoint to bind to.
+         */
+        entrypoint?: string;
+        /**
+         * The Service environment.
+         */
+        environment: string;
+        /**
+         * The Service name.
+         */
+        service: string;
+    }
+
+    export interface ProjectDeploymentConfigsPreviewVectorizeBindings {
+        indexName: string;
+    }
+
+    export interface ProjectDeploymentConfigsProduction {
+        /**
+         * Constellation bindings used for Pages Functions.
+         */
+        aiBindings?: {[key: string]: outputs.pages.ProjectDeploymentConfigsProductionAiBindings};
+        /**
+         * Whether to always use the latest compatibility date for Pages Functions.
+         */
+        alwaysUseLatestCompatibilityDate: boolean;
+        /**
+         * Analytics Engine bindings used for Pages Functions.
+         */
+        analyticsEngineDatasets?: {[key: string]: outputs.pages.ProjectDeploymentConfigsProductionAnalyticsEngineDatasets};
+        /**
+         * Browser bindings used for Pages Functions.
+         */
+        browsers?: {[key: string]: outputs.pages.ProjectDeploymentConfigsProductionBrowsers};
+        /**
+         * The major version of the build image to use for Pages Functions.
+         */
+        buildImageMajorVersion: number;
+        /**
+         * Compatibility date used for Pages Functions.
+         */
+        compatibilityDate: string;
+        /**
+         * Compatibility flags used for Pages Functions.
+         */
+        compatibilityFlags?: string[];
+        /**
+         * D1 databases used for Pages Functions.
+         */
+        d1Databases?: {[key: string]: outputs.pages.ProjectDeploymentConfigsProductionD1Databases};
+        /**
+         * Durable Object namespaces used for Pages Functions.
+         */
+        durableObjectNamespaces?: {[key: string]: outputs.pages.ProjectDeploymentConfigsProductionDurableObjectNamespaces};
+        /**
+         * Environment variables used for builds and Pages Functions.
+         */
+        envVars?: {[key: string]: outputs.pages.ProjectDeploymentConfigsProductionEnvVars};
+        /**
+         * Whether to fail open when the deployment config cannot be applied.
+         */
+        failOpen: boolean;
+        /**
+         * Hyperdrive bindings used for Pages Functions.
+         */
+        hyperdriveBindings?: {[key: string]: outputs.pages.ProjectDeploymentConfigsProductionHyperdriveBindings};
+        /**
+         * KV namespaces used for Pages Functions.
+         */
+        kvNamespaces?: {[key: string]: outputs.pages.ProjectDeploymentConfigsProductionKvNamespaces};
+        /**
+         * Limits for Pages Functions.
+         */
+        limits?: outputs.pages.ProjectDeploymentConfigsProductionLimits;
+        /**
+         * mTLS bindings used for Pages Functions.
+         */
+        mtlsCertificates?: {[key: string]: outputs.pages.ProjectDeploymentConfigsProductionMtlsCertificates};
+        /**
+         * Placement setting used for Pages Functions.
+         */
+        placement?: outputs.pages.ProjectDeploymentConfigsProductionPlacement;
+        /**
+         * Queue Producer bindings used for Pages Functions.
+         */
+        queueProducers?: {[key: string]: outputs.pages.ProjectDeploymentConfigsProductionQueueProducers};
+        /**
+         * R2 buckets used for Pages Functions.
+         */
+        r2Buckets?: {[key: string]: outputs.pages.ProjectDeploymentConfigsProductionR2Buckets};
+        /**
+         * Services used for Pages Functions.
+         */
+        services?: {[key: string]: outputs.pages.ProjectDeploymentConfigsProductionServices};
+        /**
+         * The usage model for Pages Functions.
+         * Available values: "standard", "bundled", "unbound".
+         *
+         * @deprecated All new projects now use the Standard usage model.
+         */
+        usageModel: string;
+        /**
+         * Vectorize bindings used for Pages Functions.
+         */
+        vectorizeBindings?: {[key: string]: outputs.pages.ProjectDeploymentConfigsProductionVectorizeBindings};
+        /**
+         * Hash of the Wrangler configuration used for the deployment.
+         */
+        wranglerConfigHash?: string;
+    }
+
+    export interface ProjectDeploymentConfigsProductionAiBindings {
+        projectId: string;
+    }
+
+    export interface ProjectDeploymentConfigsProductionAnalyticsEngineDatasets {
+        /**
+         * Name of the dataset.
+         */
+        dataset: string;
+    }
+
+    export interface ProjectDeploymentConfigsProductionBrowsers {
+    }
+
+    export interface ProjectDeploymentConfigsProductionD1Databases {
+        /**
+         * UUID of the D1 database.
+         */
+        id: string;
+    }
+
+    export interface ProjectDeploymentConfigsProductionDurableObjectNamespaces {
+        /**
+         * ID of the Durable Object namespace.
+         */
+        namespaceId: string;
+    }
+
+    export interface ProjectDeploymentConfigsProductionEnvVars {
+        /**
+         * Available values: "plain*text", "secret*text".
+         */
+        type: string;
+        /**
+         * Environment variable value.
+         */
+        value: string;
+    }
+
+    export interface ProjectDeploymentConfigsProductionHyperdriveBindings {
+        id: string;
+    }
+
+    export interface ProjectDeploymentConfigsProductionKvNamespaces {
+        /**
+         * ID of the KV namespace.
+         */
+        namespaceId: string;
+    }
+
+    export interface ProjectDeploymentConfigsProductionLimits {
+        /**
+         * CPU time limit in milliseconds.
+         */
+        cpuMs: number;
+    }
+
+    export interface ProjectDeploymentConfigsProductionMtlsCertificates {
+        certificateId: string;
+    }
+
+    export interface ProjectDeploymentConfigsProductionPlacement {
+        /**
+         * Placement mode.
+         */
+        mode?: string;
+    }
+
+    export interface ProjectDeploymentConfigsProductionQueueProducers {
+        /**
+         * Name of the Queue.
+         */
+        name: string;
+    }
+
+    export interface ProjectDeploymentConfigsProductionR2Buckets {
+        /**
+         * Jurisdiction of the R2 bucket.
+         */
+        jurisdiction?: string;
+        /**
+         * Name of the R2 bucket.
+         */
+        name: string;
+    }
+
+    export interface ProjectDeploymentConfigsProductionServices {
+        /**
+         * The entrypoint to bind to.
+         */
+        entrypoint?: string;
+        /**
+         * The Service environment.
+         */
+        environment: string;
+        /**
+         * The Service name.
+         */
+        service: string;
+    }
+
+    export interface ProjectDeploymentConfigsProductionVectorizeBindings {
+        indexName: string;
+    }
+
+    export interface ProjectLatestDeployment {
+        /**
+         * A list of alias URLs pointing to this deployment.
+         */
+        aliases: string[];
+        /**
+         * Configs for the project build process.
+         */
+        buildConfig: outputs.pages.ProjectLatestDeploymentBuildConfig;
+        /**
+         * When the deployment was created.
+         */
+        createdOn: string;
+        /**
+         * Info about what caused the deployment.
+         */
+        deploymentTrigger: outputs.pages.ProjectLatestDeploymentDeploymentTrigger;
+        /**
+         * Environment variables used for builds and Pages Functions.
+         */
+        envVars: {[key: string]: outputs.pages.ProjectLatestDeploymentEnvVars};
+        /**
+         * Type of deploy.
+         * Available values: "preview", "production".
+         */
+        environment: string;
+        /**
+         * Id of the deployment.
+         */
+        id: string;
+        /**
+         * If the deployment has been skipped.
+         */
+        isSkipped: boolean;
+        /**
+         * The status of the deployment.
+         */
+        latestStage: outputs.pages.ProjectLatestDeploymentLatestStage;
+        /**
+         * When the deployment was last modified.
+         */
+        modifiedOn: string;
+        /**
+         * Id of the project.
+         */
+        projectId: string;
+        /**
+         * Name of the project.
+         */
+        projectName: string;
+        /**
+         * Short Id (8 character) of the deployment.
+         */
+        shortId: string;
+        /**
+         * Configs for the project source control.
+         */
+        source: outputs.pages.ProjectLatestDeploymentSource;
+        /**
+         * List of past stages.
+         */
+        stages: outputs.pages.ProjectLatestDeploymentStage[];
+        /**
+         * The live URL to view this deployment.
+         */
+        url: string;
+        /**
+         * Whether the deployment uses functions.
+         */
+        usesFunctions: boolean;
+    }
+
+    export interface ProjectLatestDeploymentBuildConfig {
+        /**
+         * Enable build caching for the project.
+         */
+        buildCaching: boolean;
+        /**
+         * Command used to build project.
+         */
+        buildCommand: string;
+        /**
+         * Assets output directory of the build.
+         */
+        destinationDir: string;
+        /**
+         * Directory to run the command.
+         */
+        rootDir: string;
+        /**
+         * The classifying tag for analytics.
+         */
+        webAnalyticsTag: string;
+        /**
+         * The auth token for analytics.
+         */
+        webAnalyticsToken: string;
+    }
+
+    export interface ProjectLatestDeploymentDeploymentTrigger {
+        /**
+         * Additional info about the trigger.
+         */
+        metadata: outputs.pages.ProjectLatestDeploymentDeploymentTriggerMetadata;
+        /**
+         * What caused the deployment.
+         * Available values: "github:push", "ad*hoc", "deploy*hook".
+         */
+        type: string;
+    }
+
+    export interface ProjectLatestDeploymentDeploymentTriggerMetadata {
+        /**
+         * Where the trigger happened.
+         */
+        branch: string;
+        /**
+         * Whether the deployment trigger commit was dirty.
+         */
+        commitDirty: boolean;
+        /**
+         * Hash of the deployment trigger commit.
+         */
+        commitHash: string;
+        /**
+         * Message of the deployment trigger commit.
+         */
+        commitMessage: string;
+    }
+
+    export interface ProjectLatestDeploymentEnvVars {
+        /**
+         * Available values: "plain*text", "secret*text".
+         */
+        type: string;
+        /**
+         * Environment variable value.
+         */
+        value: string;
+    }
+
+    export interface ProjectLatestDeploymentLatestStage {
+        /**
+         * When the stage ended.
+         */
+        endedOn: string;
+        /**
+         * The current build stage.
+         * Available values: "queued", "initialize", "cloneRepo", "build", "deploy".
+         */
+        name: string;
+        /**
+         * When the stage started.
+         */
+        startedOn: string;
+        /**
+         * State of the current stage.
+         * Available values: "success", "idle", "active", "failure", "canceled".
+         */
+        status: string;
+    }
+
+    export interface ProjectLatestDeploymentSource {
+        config: outputs.pages.ProjectLatestDeploymentSourceConfig;
+        /**
+         * The source control management provider.
+         * Available values: "github", "gitlab".
+         */
+        type: string;
+    }
+
+    export interface ProjectLatestDeploymentSourceConfig {
+        /**
+         * Whether to enable automatic deployments when pushing to the source repository.
+         * When disabled, no deployments (production or preview) will be triggered automatically.
+         *
+         * @deprecated Use `productionDeploymentsEnabled` and `previewDeploymentSetting` for more granular control.
+         */
+        deploymentsEnabled: boolean;
+        /**
+         * The owner of the repository.
+         */
+        owner: string;
+        /**
+         * The owner ID of the repository.
+         */
+        ownerId: string;
+        /**
+         * A list of paths that should be excluded from triggering a preview deployment. Wildcard syntax (`*`) is supported.
+         */
+        pathExcludes: string[];
+        /**
+         * A list of paths that should be watched to trigger a preview deployment. Wildcard syntax (`*`) is supported.
+         */
+        pathIncludes: string[];
+        /**
+         * Whether to enable PR comments.
+         */
+        prCommentsEnabled: boolean;
+        /**
+         * A list of branches that should not trigger a preview deployment. Wildcard syntax (`*`) is supported. Must be used with `previewDeploymentSetting` set to `custom`.
+         */
+        previewBranchExcludes: string[];
+        /**
+         * A list of branches that should trigger a preview deployment. Wildcard syntax (`*`) is supported. Must be used with `previewDeploymentSetting` set to `custom`.
+         */
+        previewBranchIncludes: string[];
+        /**
+         * Controls whether commits to preview branches trigger a preview deployment.
+         * Available values: "all", "none", "custom".
+         */
+        previewDeploymentSetting: string;
+        /**
+         * The production branch of the repository.
+         */
+        productionBranch: string;
+        /**
+         * Whether to trigger a production deployment on commits to the production branch.
+         */
+        productionDeploymentsEnabled: boolean;
+        /**
+         * The ID of the repository.
+         */
+        repoId: string;
+        /**
+         * The name of the repository.
+         */
+        repoName: string;
+    }
+
+    export interface ProjectLatestDeploymentStage {
+        /**
+         * When the stage ended.
+         */
+        endedOn: string;
+        /**
+         * The current build stage.
+         * Available values: "queued", "initialize", "cloneRepo", "build", "deploy".
+         */
+        name: string;
+        /**
+         * When the stage started.
+         */
+        startedOn: string;
+        /**
+         * State of the current stage.
+         * Available values: "success", "idle", "active", "failure", "canceled".
+         */
+        status: string;
+    }
+
+    export interface ProjectSource {
+        config: outputs.pages.ProjectSourceConfig;
+        /**
+         * The source control management provider.
+         * Available values: "github", "gitlab".
+         */
+        type: string;
+    }
+
+    export interface ProjectSourceConfig {
+        /**
+         * Whether to enable automatic deployments when pushing to the source repository.
+         * When disabled, no deployments (production or preview) will be triggered automatically.
+         *
+         * @deprecated Use `productionDeploymentsEnabled` and `previewDeploymentSetting` for more granular control.
+         */
+        deploymentsEnabled: boolean;
+        /**
+         * The owner of the repository.
+         */
+        owner: string;
+        /**
+         * The owner ID of the repository.
+         */
+        ownerId: string;
+        /**
+         * A list of paths that should be excluded from triggering a preview deployment. Wildcard syntax (`*`) is supported.
+         */
+        pathExcludes: string[];
+        /**
+         * A list of paths that should be watched to trigger a preview deployment. Wildcard syntax (`*`) is supported.
+         */
+        pathIncludes: string[];
+        /**
+         * Whether to enable PR comments.
+         */
+        prCommentsEnabled: boolean;
+        /**
+         * A list of branches that should not trigger a preview deployment. Wildcard syntax (`*`) is supported. Must be used with `previewDeploymentSetting` set to `custom`.
+         */
+        previewBranchExcludes: string[];
+        /**
+         * A list of branches that should trigger a preview deployment. Wildcard syntax (`*`) is supported. Must be used with `previewDeploymentSetting` set to `custom`.
+         */
+        previewBranchIncludes: string[];
+        /**
+         * Controls whether commits to preview branches trigger a preview deployment.
+         * Available values: "all", "none", "custom".
+         */
+        previewDeploymentSetting: string;
+        /**
+         * The production branch of the repository.
+         */
+        productionBranch: string;
+        /**
+         * Whether to trigger a production deployment on commits to the production branch.
+         */
+        productionDeploymentsEnabled: boolean;
+        /**
+         * The ID of the repository.
+         */
+        repoId: string;
+        /**
+         * The name of the repository.
+         */
+        repoName: string;
+    }
+
+}

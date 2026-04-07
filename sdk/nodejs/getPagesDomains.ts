@@ -13,13 +13,15 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as cloudflare from "@pulumi/cloudflare";
  *
- * const examplePagesDomains = cloudflare.getPagesDomains({
+ * const examplePagesDomains = cloudflare.pages.getDomains({
  *     accountId: "023e105f4ecef8ad9ca31a8372d0c353",
  *     projectName: "this-is-my-project-01",
  * });
  * ```
  */
+/** @deprecated cloudflare.index/getpagesdomains.getPagesDomains has been deprecated in favor of cloudflare.pages/getdomains.getDomains */
 export function getPagesDomains(args: GetPagesDomainsArgs, opts?: pulumi.InvokeOptions): Promise<GetPagesDomainsResult> {
+    pulumi.log.warn("getPagesDomains is deprecated: cloudflare.index/getpagesdomains.getPagesDomains has been deprecated in favor of cloudflare.pages/getdomains.getDomains")
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("cloudflare:index/getPagesDomains:getPagesDomains", {
         "accountId": args.accountId,
@@ -78,13 +80,15 @@ export interface GetPagesDomainsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as cloudflare from "@pulumi/cloudflare";
  *
- * const examplePagesDomains = cloudflare.getPagesDomains({
+ * const examplePagesDomains = cloudflare.pages.getDomains({
  *     accountId: "023e105f4ecef8ad9ca31a8372d0c353",
  *     projectName: "this-is-my-project-01",
  * });
  * ```
  */
+/** @deprecated cloudflare.index/getpagesdomains.getPagesDomains has been deprecated in favor of cloudflare.pages/getdomains.getDomains */
 export function getPagesDomainsOutput(args: GetPagesDomainsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetPagesDomainsResult> {
+    pulumi.log.warn("getPagesDomains is deprecated: cloudflare.index/getpagesdomains.getPagesDomains has been deprecated in favor of cloudflare.pages/getdomains.getDomains")
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("cloudflare:index/getPagesDomains:getPagesDomains", {
         "accountId": args.accountId,

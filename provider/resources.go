@@ -515,8 +515,14 @@ func Provider() info.Provider {
 		EnableAccurateBridgePreview:    true,
 	}
 
-	prov.MustComputeTokens(tfbridgetokens.SingleModule("cloudflare_", mainMod,
-		tfbridgetokens.MakeStandard(mainPkg)))
+	prov.MustComputeTokens(tfbridgetokens.KnownModules(
+		"cloudflare_",
+		mainMod,
+		[]string{
+			"pages",
+		},
+		tfbridgetokens.MakeStandard(mainPkg),
+	))
 
 	resourcesWithMistypedID := []string{
 		"cloudflare_email_security_trusted_domains",

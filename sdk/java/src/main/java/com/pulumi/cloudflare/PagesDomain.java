@@ -28,8 +28,8 @@ import javax.annotation.Nullable;
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
- * import com.pulumi.cloudflare.PagesDomain;
- * import com.pulumi.cloudflare.PagesDomainArgs;
+ * import com.pulumi.cloudflare.pages.Domain;
+ * import com.pulumi.cloudflare.pages.DomainArgs;
  * import java.util.List;
  * import java.util.ArrayList;
  * import java.util.Map;
@@ -43,7 +43,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var examplePagesDomain = new PagesDomain("examplePagesDomain", PagesDomainArgs.builder()
+ *         var examplePagesDomain = new Domain("examplePagesDomain", DomainArgs.builder()
  *             .accountId("023e105f4ecef8ad9ca31a8372d0c353")
  *             .projectName("this-is-my-project-01")
  *             .name("this-is-my-domain-01.com")
@@ -60,7 +60,11 @@ import javax.annotation.Nullable;
  * $ pulumi import cloudflare:index/pagesDomain:PagesDomain example &#39;&lt;account_id&gt;/&lt;project_name&gt;/&lt;domain_name&gt;&#39;
  * ```
  * 
+ * @deprecated
+ * cloudflare.index/pagesdomain.PagesDomain has been deprecated in favor of cloudflare.pages/domain.Domain
+ * 
  */
+@Deprecated /* cloudflare.index/pagesdomain.PagesDomain has been deprecated in favor of cloudflare.pages/domain.Domain */
 @ResourceType(type="cloudflare:index/pagesDomain:PagesDomain")
 public class PagesDomain extends com.pulumi.resources.CustomResource {
     /**

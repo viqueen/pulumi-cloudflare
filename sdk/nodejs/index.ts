@@ -3086,10 +3086,12 @@ utilities.lazyLoad(exports, ["ZoneSubscription"], () => require("./zoneSubscript
 
 // Export sub-modules:
 import * as config from "./config";
+import * as pages from "./pages";
 import * as types from "./types";
 
 export {
     config,
+    pages,
     types,
 };
 

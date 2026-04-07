@@ -19430,3 +19430,1032 @@ export interface ZoneTenantUnit {
      */
     id?: pulumi.Input<string>;
 }
+export namespace pages {
+    export interface DomainValidationData {
+        errorMessage?: pulumi.Input<string>;
+        /**
+         * Available values: "http", "txt".
+         */
+        method?: pulumi.Input<string>;
+        /**
+         * Available values: "initializing", "pending", "active", "deactivated", "error".
+         */
+        status?: pulumi.Input<string>;
+        txtName?: pulumi.Input<string>;
+        txtValue?: pulumi.Input<string>;
+    }
+
+    export interface DomainVerificationData {
+        errorMessage?: pulumi.Input<string>;
+        /**
+         * Available values: "pending", "active", "deactivated", "blocked", "error".
+         */
+        status?: pulumi.Input<string>;
+    }
+
+    export interface ProjectBuildConfig {
+        /**
+         * Enable build caching for the project.
+         */
+        buildCaching?: pulumi.Input<boolean>;
+        /**
+         * Command used to build project.
+         */
+        buildCommand?: pulumi.Input<string>;
+        /**
+         * Output directory of the build.
+         */
+        destinationDir?: pulumi.Input<string>;
+        /**
+         * Directory to run the command.
+         */
+        rootDir?: pulumi.Input<string>;
+        /**
+         * The classifying tag for analytics.
+         */
+        webAnalyticsTag?: pulumi.Input<string>;
+        /**
+         * The auth token for analytics.
+         */
+        webAnalyticsToken?: pulumi.Input<string>;
+    }
+
+    export interface ProjectCanonicalDeployment {
+        /**
+         * A list of alias URLs pointing to this deployment.
+         */
+        aliases?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * Configs for the project build process.
+         */
+        buildConfig?: pulumi.Input<inputs.pages.ProjectCanonicalDeploymentBuildConfig>;
+        /**
+         * When the deployment was created.
+         */
+        createdOn?: pulumi.Input<string>;
+        /**
+         * Info about what caused the deployment.
+         */
+        deploymentTrigger?: pulumi.Input<inputs.pages.ProjectCanonicalDeploymentDeploymentTrigger>;
+        /**
+         * Environment variables used for builds and Pages Functions.
+         */
+        envVars?: pulumi.Input<{[key: string]: pulumi.Input<inputs.pages.ProjectCanonicalDeploymentEnvVars>}>;
+        /**
+         * Type of deploy.
+         * Available values: "preview", "production".
+         */
+        environment?: pulumi.Input<string>;
+        /**
+         * Id of the deployment.
+         */
+        id?: pulumi.Input<string>;
+        /**
+         * If the deployment has been skipped.
+         */
+        isSkipped?: pulumi.Input<boolean>;
+        /**
+         * The status of the deployment.
+         */
+        latestStage?: pulumi.Input<inputs.pages.ProjectCanonicalDeploymentLatestStage>;
+        /**
+         * When the deployment was last modified.
+         */
+        modifiedOn?: pulumi.Input<string>;
+        /**
+         * Id of the project.
+         */
+        projectId?: pulumi.Input<string>;
+        /**
+         * Name of the project.
+         */
+        projectName?: pulumi.Input<string>;
+        /**
+         * Short Id (8 character) of the deployment.
+         */
+        shortId?: pulumi.Input<string>;
+        /**
+         * Configs for the project source control.
+         */
+        source?: pulumi.Input<inputs.pages.ProjectCanonicalDeploymentSource>;
+        /**
+         * List of past stages.
+         */
+        stages?: pulumi.Input<pulumi.Input<inputs.pages.ProjectCanonicalDeploymentStage>[]>;
+        /**
+         * The live URL to view this deployment.
+         */
+        url?: pulumi.Input<string>;
+        /**
+         * Whether the deployment uses functions.
+         */
+        usesFunctions?: pulumi.Input<boolean>;
+    }
+
+    export interface ProjectCanonicalDeploymentBuildConfig {
+        /**
+         * Enable build caching for the project.
+         */
+        buildCaching?: pulumi.Input<boolean>;
+        /**
+         * Command used to build project.
+         */
+        buildCommand?: pulumi.Input<string>;
+        /**
+         * Assets output directory of the build.
+         */
+        destinationDir?: pulumi.Input<string>;
+        /**
+         * Directory to run the command.
+         */
+        rootDir?: pulumi.Input<string>;
+        /**
+         * The classifying tag for analytics.
+         */
+        webAnalyticsTag?: pulumi.Input<string>;
+        /**
+         * The auth token for analytics.
+         */
+        webAnalyticsToken?: pulumi.Input<string>;
+    }
+
+    export interface ProjectCanonicalDeploymentDeploymentTrigger {
+        /**
+         * Additional info about the trigger.
+         */
+        metadata?: pulumi.Input<inputs.pages.ProjectCanonicalDeploymentDeploymentTriggerMetadata>;
+        /**
+         * What caused the deployment.
+         * Available values: "github:push", "ad*hoc", "deploy*hook".
+         */
+        type?: pulumi.Input<string>;
+    }
+
+    export interface ProjectCanonicalDeploymentDeploymentTriggerMetadata {
+        /**
+         * Where the trigger happened.
+         */
+        branch?: pulumi.Input<string>;
+        /**
+         * Whether the deployment trigger commit was dirty.
+         */
+        commitDirty?: pulumi.Input<boolean>;
+        /**
+         * Hash of the deployment trigger commit.
+         */
+        commitHash?: pulumi.Input<string>;
+        /**
+         * Message of the deployment trigger commit.
+         */
+        commitMessage?: pulumi.Input<string>;
+    }
+
+    export interface ProjectCanonicalDeploymentEnvVars {
+        /**
+         * Available values: "plain*text", "secret*text".
+         */
+        type?: pulumi.Input<string>;
+        /**
+         * Environment variable value.
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface ProjectCanonicalDeploymentLatestStage {
+        /**
+         * When the stage ended.
+         */
+        endedOn?: pulumi.Input<string>;
+        /**
+         * The current build stage.
+         * Available values: "queued", "initialize", "cloneRepo", "build", "deploy".
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * When the stage started.
+         */
+        startedOn?: pulumi.Input<string>;
+        /**
+         * State of the current stage.
+         * Available values: "success", "idle", "active", "failure", "canceled".
+         */
+        status?: pulumi.Input<string>;
+    }
+
+    export interface ProjectCanonicalDeploymentSource {
+        config?: pulumi.Input<inputs.pages.ProjectCanonicalDeploymentSourceConfig>;
+        /**
+         * The source control management provider.
+         * Available values: "github", "gitlab".
+         */
+        type?: pulumi.Input<string>;
+    }
+
+    export interface ProjectCanonicalDeploymentSourceConfig {
+        /**
+         * Whether to enable automatic deployments when pushing to the source repository.
+         * When disabled, no deployments (production or preview) will be triggered automatically.
+         *
+         * @deprecated Use `productionDeploymentsEnabled` and `previewDeploymentSetting` for more granular control.
+         */
+        deploymentsEnabled?: pulumi.Input<boolean>;
+        /**
+         * The owner of the repository.
+         */
+        owner?: pulumi.Input<string>;
+        /**
+         * The owner ID of the repository.
+         */
+        ownerId?: pulumi.Input<string>;
+        /**
+         * A list of paths that should be excluded from triggering a preview deployment. Wildcard syntax (`*`) is supported.
+         */
+        pathExcludes?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * A list of paths that should be watched to trigger a preview deployment. Wildcard syntax (`*`) is supported.
+         */
+        pathIncludes?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * Whether to enable PR comments.
+         */
+        prCommentsEnabled?: pulumi.Input<boolean>;
+        /**
+         * A list of branches that should not trigger a preview deployment. Wildcard syntax (`*`) is supported. Must be used with `previewDeploymentSetting` set to `custom`.
+         */
+        previewBranchExcludes?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * A list of branches that should trigger a preview deployment. Wildcard syntax (`*`) is supported. Must be used with `previewDeploymentSetting` set to `custom`.
+         */
+        previewBranchIncludes?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * Controls whether commits to preview branches trigger a preview deployment.
+         * Available values: "all", "none", "custom".
+         */
+        previewDeploymentSetting?: pulumi.Input<string>;
+        /**
+         * The production branch of the repository.
+         */
+        productionBranch?: pulumi.Input<string>;
+        /**
+         * Whether to trigger a production deployment on commits to the production branch.
+         */
+        productionDeploymentsEnabled?: pulumi.Input<boolean>;
+        /**
+         * The ID of the repository.
+         */
+        repoId?: pulumi.Input<string>;
+        /**
+         * The name of the repository.
+         */
+        repoName?: pulumi.Input<string>;
+    }
+
+    export interface ProjectCanonicalDeploymentStage {
+        /**
+         * When the stage ended.
+         */
+        endedOn?: pulumi.Input<string>;
+        /**
+         * The current build stage.
+         * Available values: "queued", "initialize", "cloneRepo", "build", "deploy".
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * When the stage started.
+         */
+        startedOn?: pulumi.Input<string>;
+        /**
+         * State of the current stage.
+         * Available values: "success", "idle", "active", "failure", "canceled".
+         */
+        status?: pulumi.Input<string>;
+    }
+
+    export interface ProjectDeploymentConfigs {
+        /**
+         * Configs for preview deploys.
+         */
+        preview?: pulumi.Input<inputs.pages.ProjectDeploymentConfigsPreview>;
+        /**
+         * Configs for production deploys.
+         */
+        production?: pulumi.Input<inputs.pages.ProjectDeploymentConfigsProduction>;
+    }
+
+    export interface ProjectDeploymentConfigsPreview {
+        /**
+         * Constellation bindings used for Pages Functions.
+         */
+        aiBindings?: pulumi.Input<{[key: string]: pulumi.Input<inputs.pages.ProjectDeploymentConfigsPreviewAiBindings>}>;
+        /**
+         * Whether to always use the latest compatibility date for Pages Functions.
+         */
+        alwaysUseLatestCompatibilityDate?: pulumi.Input<boolean>;
+        /**
+         * Analytics Engine bindings used for Pages Functions.
+         */
+        analyticsEngineDatasets?: pulumi.Input<{[key: string]: pulumi.Input<inputs.pages.ProjectDeploymentConfigsPreviewAnalyticsEngineDatasets>}>;
+        /**
+         * Browser bindings used for Pages Functions.
+         */
+        browsers?: pulumi.Input<{[key: string]: pulumi.Input<inputs.pages.ProjectDeploymentConfigsPreviewBrowsers>}>;
+        /**
+         * The major version of the build image to use for Pages Functions.
+         */
+        buildImageMajorVersion?: pulumi.Input<number>;
+        /**
+         * Compatibility date used for Pages Functions.
+         */
+        compatibilityDate?: pulumi.Input<string>;
+        /**
+         * Compatibility flags used for Pages Functions.
+         */
+        compatibilityFlags?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * D1 databases used for Pages Functions.
+         */
+        d1Databases?: pulumi.Input<{[key: string]: pulumi.Input<inputs.pages.ProjectDeploymentConfigsPreviewD1Databases>}>;
+        /**
+         * Durable Object namespaces used for Pages Functions.
+         */
+        durableObjectNamespaces?: pulumi.Input<{[key: string]: pulumi.Input<inputs.pages.ProjectDeploymentConfigsPreviewDurableObjectNamespaces>}>;
+        /**
+         * Environment variables used for builds and Pages Functions.
+         */
+        envVars?: pulumi.Input<{[key: string]: pulumi.Input<inputs.pages.ProjectDeploymentConfigsPreviewEnvVars>}>;
+        /**
+         * Whether to fail open when the deployment config cannot be applied.
+         */
+        failOpen?: pulumi.Input<boolean>;
+        /**
+         * Hyperdrive bindings used for Pages Functions.
+         */
+        hyperdriveBindings?: pulumi.Input<{[key: string]: pulumi.Input<inputs.pages.ProjectDeploymentConfigsPreviewHyperdriveBindings>}>;
+        /**
+         * KV namespaces used for Pages Functions.
+         */
+        kvNamespaces?: pulumi.Input<{[key: string]: pulumi.Input<inputs.pages.ProjectDeploymentConfigsPreviewKvNamespaces>}>;
+        /**
+         * Limits for Pages Functions.
+         */
+        limits?: pulumi.Input<inputs.pages.ProjectDeploymentConfigsPreviewLimits>;
+        /**
+         * mTLS bindings used for Pages Functions.
+         */
+        mtlsCertificates?: pulumi.Input<{[key: string]: pulumi.Input<inputs.pages.ProjectDeploymentConfigsPreviewMtlsCertificates>}>;
+        /**
+         * Placement setting used for Pages Functions.
+         */
+        placement?: pulumi.Input<inputs.pages.ProjectDeploymentConfigsPreviewPlacement>;
+        /**
+         * Queue Producer bindings used for Pages Functions.
+         */
+        queueProducers?: pulumi.Input<{[key: string]: pulumi.Input<inputs.pages.ProjectDeploymentConfigsPreviewQueueProducers>}>;
+        /**
+         * R2 buckets used for Pages Functions.
+         */
+        r2Buckets?: pulumi.Input<{[key: string]: pulumi.Input<inputs.pages.ProjectDeploymentConfigsPreviewR2Buckets>}>;
+        /**
+         * Services used for Pages Functions.
+         */
+        services?: pulumi.Input<{[key: string]: pulumi.Input<inputs.pages.ProjectDeploymentConfigsPreviewServices>}>;
+        /**
+         * The usage model for Pages Functions.
+         * Available values: "standard", "bundled", "unbound".
+         *
+         * @deprecated All new projects now use the Standard usage model.
+         */
+        usageModel?: pulumi.Input<string>;
+        /**
+         * Vectorize bindings used for Pages Functions.
+         */
+        vectorizeBindings?: pulumi.Input<{[key: string]: pulumi.Input<inputs.pages.ProjectDeploymentConfigsPreviewVectorizeBindings>}>;
+        /**
+         * Hash of the Wrangler configuration used for the deployment.
+         */
+        wranglerConfigHash?: pulumi.Input<string>;
+    }
+
+    export interface ProjectDeploymentConfigsPreviewAiBindings {
+        projectId: pulumi.Input<string>;
+    }
+
+    export interface ProjectDeploymentConfigsPreviewAnalyticsEngineDatasets {
+        /**
+         * Name of the dataset.
+         */
+        dataset: pulumi.Input<string>;
+    }
+
+    export interface ProjectDeploymentConfigsPreviewBrowsers {
+    }
+
+    export interface ProjectDeploymentConfigsPreviewD1Databases {
+        /**
+         * UUID of the D1 database.
+         */
+        id: pulumi.Input<string>;
+    }
+
+    export interface ProjectDeploymentConfigsPreviewDurableObjectNamespaces {
+        /**
+         * ID of the Durable Object namespace.
+         */
+        namespaceId: pulumi.Input<string>;
+    }
+
+    export interface ProjectDeploymentConfigsPreviewEnvVars {
+        /**
+         * Available values: "plain*text", "secret*text".
+         */
+        type: pulumi.Input<string>;
+        /**
+         * Environment variable value.
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface ProjectDeploymentConfigsPreviewHyperdriveBindings {
+        id: pulumi.Input<string>;
+    }
+
+    export interface ProjectDeploymentConfigsPreviewKvNamespaces {
+        /**
+         * ID of the KV namespace.
+         */
+        namespaceId: pulumi.Input<string>;
+    }
+
+    export interface ProjectDeploymentConfigsPreviewLimits {
+        /**
+         * CPU time limit in milliseconds.
+         */
+        cpuMs: pulumi.Input<number>;
+    }
+
+    export interface ProjectDeploymentConfigsPreviewMtlsCertificates {
+        certificateId: pulumi.Input<string>;
+    }
+
+    export interface ProjectDeploymentConfigsPreviewPlacement {
+        /**
+         * Placement mode.
+         */
+        mode?: pulumi.Input<string>;
+    }
+
+    export interface ProjectDeploymentConfigsPreviewQueueProducers {
+        /**
+         * Name of the Queue.
+         */
+        name: pulumi.Input<string>;
+    }
+
+    export interface ProjectDeploymentConfigsPreviewR2Buckets {
+        /**
+         * Jurisdiction of the R2 bucket.
+         */
+        jurisdiction?: pulumi.Input<string>;
+        /**
+         * Name of the R2 bucket.
+         */
+        name: pulumi.Input<string>;
+    }
+
+    export interface ProjectDeploymentConfigsPreviewServices {
+        /**
+         * The entrypoint to bind to.
+         */
+        entrypoint?: pulumi.Input<string>;
+        /**
+         * The Service environment.
+         */
+        environment?: pulumi.Input<string>;
+        /**
+         * The Service name.
+         */
+        service: pulumi.Input<string>;
+    }
+
+    export interface ProjectDeploymentConfigsPreviewVectorizeBindings {
+        indexName: pulumi.Input<string>;
+    }
+
+    export interface ProjectDeploymentConfigsProduction {
+        /**
+         * Constellation bindings used for Pages Functions.
+         */
+        aiBindings?: pulumi.Input<{[key: string]: pulumi.Input<inputs.pages.ProjectDeploymentConfigsProductionAiBindings>}>;
+        /**
+         * Whether to always use the latest compatibility date for Pages Functions.
+         */
+        alwaysUseLatestCompatibilityDate?: pulumi.Input<boolean>;
+        /**
+         * Analytics Engine bindings used for Pages Functions.
+         */
+        analyticsEngineDatasets?: pulumi.Input<{[key: string]: pulumi.Input<inputs.pages.ProjectDeploymentConfigsProductionAnalyticsEngineDatasets>}>;
+        /**
+         * Browser bindings used for Pages Functions.
+         */
+        browsers?: pulumi.Input<{[key: string]: pulumi.Input<inputs.pages.ProjectDeploymentConfigsProductionBrowsers>}>;
+        /**
+         * The major version of the build image to use for Pages Functions.
+         */
+        buildImageMajorVersion?: pulumi.Input<number>;
+        /**
+         * Compatibility date used for Pages Functions.
+         */
+        compatibilityDate?: pulumi.Input<string>;
+        /**
+         * Compatibility flags used for Pages Functions.
+         */
+        compatibilityFlags?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * D1 databases used for Pages Functions.
+         */
+        d1Databases?: pulumi.Input<{[key: string]: pulumi.Input<inputs.pages.ProjectDeploymentConfigsProductionD1Databases>}>;
+        /**
+         * Durable Object namespaces used for Pages Functions.
+         */
+        durableObjectNamespaces?: pulumi.Input<{[key: string]: pulumi.Input<inputs.pages.ProjectDeploymentConfigsProductionDurableObjectNamespaces>}>;
+        /**
+         * Environment variables used for builds and Pages Functions.
+         */
+        envVars?: pulumi.Input<{[key: string]: pulumi.Input<inputs.pages.ProjectDeploymentConfigsProductionEnvVars>}>;
+        /**
+         * Whether to fail open when the deployment config cannot be applied.
+         */
+        failOpen?: pulumi.Input<boolean>;
+        /**
+         * Hyperdrive bindings used for Pages Functions.
+         */
+        hyperdriveBindings?: pulumi.Input<{[key: string]: pulumi.Input<inputs.pages.ProjectDeploymentConfigsProductionHyperdriveBindings>}>;
+        /**
+         * KV namespaces used for Pages Functions.
+         */
+        kvNamespaces?: pulumi.Input<{[key: string]: pulumi.Input<inputs.pages.ProjectDeploymentConfigsProductionKvNamespaces>}>;
+        /**
+         * Limits for Pages Functions.
+         */
+        limits?: pulumi.Input<inputs.pages.ProjectDeploymentConfigsProductionLimits>;
+        /**
+         * mTLS bindings used for Pages Functions.
+         */
+        mtlsCertificates?: pulumi.Input<{[key: string]: pulumi.Input<inputs.pages.ProjectDeploymentConfigsProductionMtlsCertificates>}>;
+        /**
+         * Placement setting used for Pages Functions.
+         */
+        placement?: pulumi.Input<inputs.pages.ProjectDeploymentConfigsProductionPlacement>;
+        /**
+         * Queue Producer bindings used for Pages Functions.
+         */
+        queueProducers?: pulumi.Input<{[key: string]: pulumi.Input<inputs.pages.ProjectDeploymentConfigsProductionQueueProducers>}>;
+        /**
+         * R2 buckets used for Pages Functions.
+         */
+        r2Buckets?: pulumi.Input<{[key: string]: pulumi.Input<inputs.pages.ProjectDeploymentConfigsProductionR2Buckets>}>;
+        /**
+         * Services used for Pages Functions.
+         */
+        services?: pulumi.Input<{[key: string]: pulumi.Input<inputs.pages.ProjectDeploymentConfigsProductionServices>}>;
+        /**
+         * The usage model for Pages Functions.
+         * Available values: "standard", "bundled", "unbound".
+         *
+         * @deprecated All new projects now use the Standard usage model.
+         */
+        usageModel?: pulumi.Input<string>;
+        /**
+         * Vectorize bindings used for Pages Functions.
+         */
+        vectorizeBindings?: pulumi.Input<{[key: string]: pulumi.Input<inputs.pages.ProjectDeploymentConfigsProductionVectorizeBindings>}>;
+        /**
+         * Hash of the Wrangler configuration used for the deployment.
+         */
+        wranglerConfigHash?: pulumi.Input<string>;
+    }
+
+    export interface ProjectDeploymentConfigsProductionAiBindings {
+        projectId: pulumi.Input<string>;
+    }
+
+    export interface ProjectDeploymentConfigsProductionAnalyticsEngineDatasets {
+        /**
+         * Name of the dataset.
+         */
+        dataset: pulumi.Input<string>;
+    }
+
+    export interface ProjectDeploymentConfigsProductionBrowsers {
+    }
+
+    export interface ProjectDeploymentConfigsProductionD1Databases {
+        /**
+         * UUID of the D1 database.
+         */
+        id: pulumi.Input<string>;
+    }
+
+    export interface ProjectDeploymentConfigsProductionDurableObjectNamespaces {
+        /**
+         * ID of the Durable Object namespace.
+         */
+        namespaceId: pulumi.Input<string>;
+    }
+
+    export interface ProjectDeploymentConfigsProductionEnvVars {
+        /**
+         * Available values: "plain*text", "secret*text".
+         */
+        type: pulumi.Input<string>;
+        /**
+         * Environment variable value.
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface ProjectDeploymentConfigsProductionHyperdriveBindings {
+        id: pulumi.Input<string>;
+    }
+
+    export interface ProjectDeploymentConfigsProductionKvNamespaces {
+        /**
+         * ID of the KV namespace.
+         */
+        namespaceId: pulumi.Input<string>;
+    }
+
+    export interface ProjectDeploymentConfigsProductionLimits {
+        /**
+         * CPU time limit in milliseconds.
+         */
+        cpuMs: pulumi.Input<number>;
+    }
+
+    export interface ProjectDeploymentConfigsProductionMtlsCertificates {
+        certificateId: pulumi.Input<string>;
+    }
+
+    export interface ProjectDeploymentConfigsProductionPlacement {
+        /**
+         * Placement mode.
+         */
+        mode?: pulumi.Input<string>;
+    }
+
+    export interface ProjectDeploymentConfigsProductionQueueProducers {
+        /**
+         * Name of the Queue.
+         */
+        name: pulumi.Input<string>;
+    }
+
+    export interface ProjectDeploymentConfigsProductionR2Buckets {
+        /**
+         * Jurisdiction of the R2 bucket.
+         */
+        jurisdiction?: pulumi.Input<string>;
+        /**
+         * Name of the R2 bucket.
+         */
+        name: pulumi.Input<string>;
+    }
+
+    export interface ProjectDeploymentConfigsProductionServices {
+        /**
+         * The entrypoint to bind to.
+         */
+        entrypoint?: pulumi.Input<string>;
+        /**
+         * The Service environment.
+         */
+        environment?: pulumi.Input<string>;
+        /**
+         * The Service name.
+         */
+        service: pulumi.Input<string>;
+    }
+
+    export interface ProjectDeploymentConfigsProductionVectorizeBindings {
+        indexName: pulumi.Input<string>;
+    }
+
+    export interface ProjectLatestDeployment {
+        /**
+         * A list of alias URLs pointing to this deployment.
+         */
+        aliases?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * Configs for the project build process.
+         */
+        buildConfig?: pulumi.Input<inputs.pages.ProjectLatestDeploymentBuildConfig>;
+        /**
+         * When the deployment was created.
+         */
+        createdOn?: pulumi.Input<string>;
+        /**
+         * Info about what caused the deployment.
+         */
+        deploymentTrigger?: pulumi.Input<inputs.pages.ProjectLatestDeploymentDeploymentTrigger>;
+        /**
+         * Environment variables used for builds and Pages Functions.
+         */
+        envVars?: pulumi.Input<{[key: string]: pulumi.Input<inputs.pages.ProjectLatestDeploymentEnvVars>}>;
+        /**
+         * Type of deploy.
+         * Available values: "preview", "production".
+         */
+        environment?: pulumi.Input<string>;
+        /**
+         * Id of the deployment.
+         */
+        id?: pulumi.Input<string>;
+        /**
+         * If the deployment has been skipped.
+         */
+        isSkipped?: pulumi.Input<boolean>;
+        /**
+         * The status of the deployment.
+         */
+        latestStage?: pulumi.Input<inputs.pages.ProjectLatestDeploymentLatestStage>;
+        /**
+         * When the deployment was last modified.
+         */
+        modifiedOn?: pulumi.Input<string>;
+        /**
+         * Id of the project.
+         */
+        projectId?: pulumi.Input<string>;
+        /**
+         * Name of the project.
+         */
+        projectName?: pulumi.Input<string>;
+        /**
+         * Short Id (8 character) of the deployment.
+         */
+        shortId?: pulumi.Input<string>;
+        /**
+         * Configs for the project source control.
+         */
+        source?: pulumi.Input<inputs.pages.ProjectLatestDeploymentSource>;
+        /**
+         * List of past stages.
+         */
+        stages?: pulumi.Input<pulumi.Input<inputs.pages.ProjectLatestDeploymentStage>[]>;
+        /**
+         * The live URL to view this deployment.
+         */
+        url?: pulumi.Input<string>;
+        /**
+         * Whether the deployment uses functions.
+         */
+        usesFunctions?: pulumi.Input<boolean>;
+    }
+
+    export interface ProjectLatestDeploymentBuildConfig {
+        /**
+         * Enable build caching for the project.
+         */
+        buildCaching?: pulumi.Input<boolean>;
+        /**
+         * Command used to build project.
+         */
+        buildCommand?: pulumi.Input<string>;
+        /**
+         * Assets output directory of the build.
+         */
+        destinationDir?: pulumi.Input<string>;
+        /**
+         * Directory to run the command.
+         */
+        rootDir?: pulumi.Input<string>;
+        /**
+         * The classifying tag for analytics.
+         */
+        webAnalyticsTag?: pulumi.Input<string>;
+        /**
+         * The auth token for analytics.
+         */
+        webAnalyticsToken?: pulumi.Input<string>;
+    }
+
+    export interface ProjectLatestDeploymentDeploymentTrigger {
+        /**
+         * Additional info about the trigger.
+         */
+        metadata?: pulumi.Input<inputs.pages.ProjectLatestDeploymentDeploymentTriggerMetadata>;
+        /**
+         * What caused the deployment.
+         * Available values: "github:push", "ad*hoc", "deploy*hook".
+         */
+        type?: pulumi.Input<string>;
+    }
+
+    export interface ProjectLatestDeploymentDeploymentTriggerMetadata {
+        /**
+         * Where the trigger happened.
+         */
+        branch?: pulumi.Input<string>;
+        /**
+         * Whether the deployment trigger commit was dirty.
+         */
+        commitDirty?: pulumi.Input<boolean>;
+        /**
+         * Hash of the deployment trigger commit.
+         */
+        commitHash?: pulumi.Input<string>;
+        /**
+         * Message of the deployment trigger commit.
+         */
+        commitMessage?: pulumi.Input<string>;
+    }
+
+    export interface ProjectLatestDeploymentEnvVars {
+        /**
+         * Available values: "plain*text", "secret*text".
+         */
+        type?: pulumi.Input<string>;
+        /**
+         * Environment variable value.
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface ProjectLatestDeploymentLatestStage {
+        /**
+         * When the stage ended.
+         */
+        endedOn?: pulumi.Input<string>;
+        /**
+         * The current build stage.
+         * Available values: "queued", "initialize", "cloneRepo", "build", "deploy".
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * When the stage started.
+         */
+        startedOn?: pulumi.Input<string>;
+        /**
+         * State of the current stage.
+         * Available values: "success", "idle", "active", "failure", "canceled".
+         */
+        status?: pulumi.Input<string>;
+    }
+
+    export interface ProjectLatestDeploymentSource {
+        config?: pulumi.Input<inputs.pages.ProjectLatestDeploymentSourceConfig>;
+        /**
+         * The source control management provider.
+         * Available values: "github", "gitlab".
+         */
+        type?: pulumi.Input<string>;
+    }
+
+    export interface ProjectLatestDeploymentSourceConfig {
+        /**
+         * Whether to enable automatic deployments when pushing to the source repository.
+         * When disabled, no deployments (production or preview) will be triggered automatically.
+         *
+         * @deprecated Use `productionDeploymentsEnabled` and `previewDeploymentSetting` for more granular control.
+         */
+        deploymentsEnabled?: pulumi.Input<boolean>;
+        /**
+         * The owner of the repository.
+         */
+        owner?: pulumi.Input<string>;
+        /**
+         * The owner ID of the repository.
+         */
+        ownerId?: pulumi.Input<string>;
+        /**
+         * A list of paths that should be excluded from triggering a preview deployment. Wildcard syntax (`*`) is supported.
+         */
+        pathExcludes?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * A list of paths that should be watched to trigger a preview deployment. Wildcard syntax (`*`) is supported.
+         */
+        pathIncludes?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * Whether to enable PR comments.
+         */
+        prCommentsEnabled?: pulumi.Input<boolean>;
+        /**
+         * A list of branches that should not trigger a preview deployment. Wildcard syntax (`*`) is supported. Must be used with `previewDeploymentSetting` set to `custom`.
+         */
+        previewBranchExcludes?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * A list of branches that should trigger a preview deployment. Wildcard syntax (`*`) is supported. Must be used with `previewDeploymentSetting` set to `custom`.
+         */
+        previewBranchIncludes?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * Controls whether commits to preview branches trigger a preview deployment.
+         * Available values: "all", "none", "custom".
+         */
+        previewDeploymentSetting?: pulumi.Input<string>;
+        /**
+         * The production branch of the repository.
+         */
+        productionBranch?: pulumi.Input<string>;
+        /**
+         * Whether to trigger a production deployment on commits to the production branch.
+         */
+        productionDeploymentsEnabled?: pulumi.Input<boolean>;
+        /**
+         * The ID of the repository.
+         */
+        repoId?: pulumi.Input<string>;
+        /**
+         * The name of the repository.
+         */
+        repoName?: pulumi.Input<string>;
+    }
+
+    export interface ProjectLatestDeploymentStage {
+        /**
+         * When the stage ended.
+         */
+        endedOn?: pulumi.Input<string>;
+        /**
+         * The current build stage.
+         * Available values: "queued", "initialize", "cloneRepo", "build", "deploy".
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * When the stage started.
+         */
+        startedOn?: pulumi.Input<string>;
+        /**
+         * State of the current stage.
+         * Available values: "success", "idle", "active", "failure", "canceled".
+         */
+        status?: pulumi.Input<string>;
+    }
+
+    export interface ProjectSource {
+        config: pulumi.Input<inputs.pages.ProjectSourceConfig>;
+        /**
+         * The source control management provider.
+         * Available values: "github", "gitlab".
+         */
+        type: pulumi.Input<string>;
+    }
+
+    export interface ProjectSourceConfig {
+        /**
+         * Whether to enable automatic deployments when pushing to the source repository.
+         * When disabled, no deployments (production or preview) will be triggered automatically.
+         *
+         * @deprecated Use `productionDeploymentsEnabled` and `previewDeploymentSetting` for more granular control.
+         */
+        deploymentsEnabled?: pulumi.Input<boolean>;
+        /**
+         * The owner of the repository.
+         */
+        owner?: pulumi.Input<string>;
+        /**
+         * The owner ID of the repository.
+         */
+        ownerId?: pulumi.Input<string>;
+        /**
+         * A list of paths that should be excluded from triggering a preview deployment. Wildcard syntax (`*`) is supported.
+         */
+        pathExcludes?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * A list of paths that should be watched to trigger a preview deployment. Wildcard syntax (`*`) is supported.
+         */
+        pathIncludes?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * Whether to enable PR comments.
+         */
+        prCommentsEnabled?: pulumi.Input<boolean>;
+        /**
+         * A list of branches that should not trigger a preview deployment. Wildcard syntax (`*`) is supported. Must be used with `previewDeploymentSetting` set to `custom`.
+         */
+        previewBranchExcludes?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * A list of branches that should trigger a preview deployment. Wildcard syntax (`*`) is supported. Must be used with `previewDeploymentSetting` set to `custom`.
+         */
+        previewBranchIncludes?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * Controls whether commits to preview branches trigger a preview deployment.
+         * Available values: "all", "none", "custom".
+         */
+        previewDeploymentSetting?: pulumi.Input<string>;
+        /**
+         * The production branch of the repository.
+         */
+        productionBranch?: pulumi.Input<string>;
+        /**
+         * Whether to trigger a production deployment on commits to the production branch.
+         */
+        productionDeploymentsEnabled?: pulumi.Input<boolean>;
+        /**
+         * The ID of the repository.
+         */
+        repoId?: pulumi.Input<string>;
+        /**
+         * The name of the repository.
+         */
+        repoName?: pulumi.Input<string>;
+    }
+}
